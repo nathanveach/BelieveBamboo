@@ -1,0 +1,8 @@
+<%= @product.title %>
+<%= form_tag order_items_path do %>
+<%= hidden_field_tag :product_id, @product.id %>
+<%= number_to_currency @product.price %>
+<%= select_tag :quantity, options_for_select(1..9) %>
+<%= submit_tag 'Add to Cart' %>
+<% end %>
+<%= @product.description %>

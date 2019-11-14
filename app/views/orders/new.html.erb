@@ -1,0 +1,13 @@
+<%= form_for @order, url: checkout_path do |f| %>
+	<%= f.label :email %>
+	<%= f.email_field :email, autofocus: true, placeholder: 'JohnDoe@Example.com', required: true %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name, placeholder: 'Gimme ur Name Bitch', required: true %>
+
+	<%= f.label :shipping_address %>
+	<%= f.text_area :address, placeholder: '123 fck u lane', required: true %>
+
+	<%= f.submit "Pay #{number_to_currency current_cart.sub_total}" %>
+
+	<% end %>

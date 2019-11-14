@@ -21,7 +21,7 @@ class ShoppingCart
 		order_item = order.items.find_or_initialize_by( product_id: product_id )
 
 		order_item.price = product.price
-		order_item.quanitity = quantity
+		order_item.quantity = quantity
 
 		ActiveRecord::Base.transaction do
 			order_item.save

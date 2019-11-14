@@ -1,0 +1,9 @@
+<% @items.each do |i| %>
+<%= i.product.title %>
+<% number_to_currency i.price %> x <%= i.quantity %> = <%= number_to_currency (i.price * i.quantity) %>
+<%= form_for i, method: :delete do |f| %>
+<%= f.submit 'Remove' %>
+<% end %>
+<% end %>
+
+<%= link_to 'checkout', checkout_path %>
