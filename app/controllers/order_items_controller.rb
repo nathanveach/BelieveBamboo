@@ -14,7 +14,7 @@ class OrderItemsController < ApplicationController
 
 	def destroy
 		current_cart.remove_item( id: params[:id] )
-		reirect_to cart_path
+		redirect_to cart_path
 	end
 
 end

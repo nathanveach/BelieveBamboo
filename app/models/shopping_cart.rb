@@ -29,6 +29,13 @@ class ShoppingCart
 		end
 	end
 
+	def remove_item(id:)
+		ActiveRecord::Base.transaction do
+			order.items.destroy(id)
+			update_sub_total!
+		end
+	end
+
 	private
 	def update_sub_total!
 		order.sub_total = order.items.sum('quantity * price')
