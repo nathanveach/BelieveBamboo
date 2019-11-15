@@ -17,11 +17,29 @@
 @import "font-awesome";
 @import "magnific-popup";
 
-
+// Blue green background for navbar
 .navbar {
   background: #37b9c8;
 }
 
+
+.navbar a {
+  color: white;
+  &:hover{
+    color: white;
+    opacity: .75;
+    text-decoration: none;
+  }
+}
+
+.navbar-dark .navbar-toggler {
+  border: 1px solid white;
+  &:hover, &:focus {
+    background-color: #4bc7d6;
+  }
+}
+
+// Theme styles 
 body {
   padding-top: 56px;
 }

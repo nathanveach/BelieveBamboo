@@ -11,12 +11,18 @@
 
   <body>
     <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <%= link_to 'BelieveBamboo', root_path, class: 'navbar-brand' %>
+        <div class="navbar-brand">
+          <%= link_to cart_path do %>
+            <i class="fa fa-shopping-cart fa-lg"></i>
+            (<%= current_cart.items_count %>)
+          <% end %>
+        </div>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -66,6 +72,8 @@
         </div>
       </div>
     </nav>
+
     <%= yield %>
+
   </body>
 </html>
