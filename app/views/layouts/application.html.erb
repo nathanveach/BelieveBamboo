@@ -18,46 +18,32 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <%= link_to 'BelieveBamboo', root_path, class: 'navbar-brand' %>
-          <div class="navbar-brand">
-            <%= link_to cart_path do %>
-              <i class="fa fa-shopping-cart fa-lg"></i>
-              (<%= current_cart.items_count %>)
-            <% end %>
-          </div>
+          
         </div>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+              <%= link_to 'About', about_path, class: 'nav-link' %>
             </li>
+            <% if current_page?(root_url) %>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProducts" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Products
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                  <% @products.each do |p| %>
+                    <%= link_to "#{p.title}", p, class: 'dropdown-item' %>
+                  <% end %>
+                </div>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <a class="nav-link" href="/#products">Products</a>
+              </li>  
+            <% end %>
             <li class="nav-item">
-              <a class="nav-link" href="services.html">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Portfolio
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
-                <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
-                <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
-                <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
-                <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Blog
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
-                <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
-                <a class="dropdown-item" href="blog-post.html">Blog Post</a>
-              </div>
-            </li>
+              <%= link_to 'Contact Us', contact_path, class: 'nav-link' %>
+            </li>            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Other Pages
@@ -71,6 +57,12 @@
               </div>
             </li>
           </ul>
+        </div>
+        <div class="navbar-brand ml-4">
+          <%= link_to cart_path do %>
+            <i class="fa fa-shopping-cart fa-lg"></i>
+            (<%= current_cart.items_count %>)
+          <% end %>
         </div>
       </div>
     </nav>

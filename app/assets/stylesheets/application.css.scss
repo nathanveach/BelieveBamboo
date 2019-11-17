@@ -22,13 +22,16 @@
   background: #37b9c8;
 }
 
+.nav-custom .navbar-brand {
+  margin-left: 5rem;
+}
 
-.navbar a {
+.navbar-brand a {
   color: white;
-  &:hover{
-    color: white;
-    opacity: .75;
-    text-decoration: none;
+  &:hover {
+  color: white;
+  opacity: .75;
+  text-decoration: none;
   }
 }
 

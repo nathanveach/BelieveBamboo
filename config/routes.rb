@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :order_items, path: '/cart/items'
   get '/cart/checkout', to: 'orders#new', as: :checkout
   patch '/cart/checkout', to: 'orders#create'
+  get '/about', to: 'pages#about'
+  get '/contact', to: 'pages#contact'
 end
