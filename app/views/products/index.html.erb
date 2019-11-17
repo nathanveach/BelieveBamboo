@@ -19,16 +19,16 @@
         <!-- Slide Two - Set the background image for this slide in the line below -->
         <div class="carousel-item" style="background-image: url('https://believebamboo.s3-us-west-1.amazonaws.com/bamboo-forest2.jpg')">
           <div class="carousel-caption d-none d-md-block">
-            <h3>Second Slide</h3>
-            <p>This is a description for the second slide.</p>
+            <h3>These are bamboos</h3>
+            <p>Yes, yes they are.</p>
           </div>
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
         <!-- Image by Jasmin Sessler from Pixabay -->
         <div class="carousel-item" style="background-image: url('https://believebamboo.s3-us-west-1.amazonaws.com/plastic-straw-trash.jpg')">
           <div class="carousel-caption d-none d-md-block">
-            <h3>Third Slide</h3>
-            <p>This is a description for the third slide.</p>
+            <h3>Trashhhhh</h3>
+            <p>THIS IS TRASH TRASH = BAD</p>
           </div>
         </div>
       </div>
@@ -56,10 +56,10 @@
       <% @products.each do |p| %>
       <div class="col-lg-4 col-sm-6 product-item">
         <div class="card h-100 border-0">
-          <a href="#"><img class="card-img-top" src="https://believebamboo.s3-us-west-1.amazonaws.com/toothbrush.jpg" alt=""></a>
+          <%= image_tag p.image, class: 'card-img-top' %>
           <div class="card-body">
             <h4 class="card-title text-center">
-              <%= link_to "#{number_to_currency p.price}", p, class: 'text-decoration-none text-dark' %>
+              <%= link_to "#{number_to_currency p.price}", p, class: 'text-decoration-none text-dark stretched-link' %>
             </h4>
             <p class="card-text text-center"><strong><%= p.title %></strong></p>
           </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_14_222413) do
+ActiveRecord::Schema.define(version: 2019_11_17_054737) do
 
   create_table "order_items", force: :cascade do |t|
     t.bigint "order_id", null: false
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_11_14_222413) do
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
 end
