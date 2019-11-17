@@ -15,14 +15,14 @@
 						<%= select_tag :quantity, options_for_select(1..5), class: 'form-control mb-2' %>
 					</div>
 					<div class="col">
-						<%= submit_tag 'Add to Cart', class: 'btn btn-primary btn-block' %>
+						<%= submit_tag 'Add to Cart', class: 'btn btn-custom btn-block text-white' %>
 					</div>
 				</div>
 				<p class="text-muted">*Limited time FREE shipping on ALL orders internationally.</p>
 			<% end %>
 			<div class="card mt-5">
+				<h6 class="card-header text-white">Description:</h6>
 				<div class="card-body">
-					<h5 class="card-title">Description:</h5><hr/>
 					<%= @product.description %>
 				</div>
 			</div>

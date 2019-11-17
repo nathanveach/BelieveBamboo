@@ -1,2 +1,2 @@
-GET NAV-BRAND CART TO ALIGN RIGHT
-finish styling index page iwht product, images, price, description? cards etc.
+style out the cart page
+style out the orders page
