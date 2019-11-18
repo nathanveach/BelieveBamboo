@@ -54,7 +54,7 @@
 
     <div class="row">
       <% @products.each do |p| %>
-      <div class="col-lg-4 col-sm-6 product-item">
+      <div class="col product-item">
         <div class="card h-100 border-0">
           <%= image_tag p.image, class: 'card-img-top' %>
           <div class="card-body">
@@ -66,7 +66,7 @@
         </div>
       </div>
       <% end %>
-      
+    </div>
     <!-- /.row -->
 
     <!-- Features Section -->
@@ -114,9 +114,6 @@
     <!-- /.container -->
   </footer>
 
-  <% @products.each do |p| %>
-    <%= link_to "#{p.title}", p %>
-  <% end %>
 
 
  

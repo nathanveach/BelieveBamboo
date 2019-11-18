@@ -1,9 +1,56 @@
-<% @items.each do |i| %>
-<%= i.product.title %>
-<% number_to_currency i.price %> x <%= i.quantity %> = <%= number_to_currency (i.price * i.quantity) %>
-<%= form_for i, method: :delete do |f| %>
-<%= f.submit 'Remove' %>
-<% end %>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 offset-md-2">
+			<div class="card cart-card my-4">
+				<div class="card-body">
+					<ul class="list-unstyled">
+						<% @items.each do |i| %>
+							<li class="media">
+								<%= link_to i.product do %>
+									<%= image_tag i.product.image, class: 'cart-img mr-3' %>
+								<% end %>
+								<div class="media-body text-center mt-4 w-75">
+									<h6><%= i.product.title %>
+									<% number_to_currency i.price %> x <%= i.quantity %> = <%= number_to_currency (i.price * i.quantity) %></h6>
+								</div>
+								<%= form_for i, method: :delete do |f| %>
+									<%= f.submit 'Remove', class: 'btn btn-danger mt-4 ml-3' %>
+								<% end %>
+							</li><hr/>
+						<% end %>
+						<% if current_cart.items_count > 0 %>
+							<div class="row">
+								<div class="col">
+									<ul class="list-unstyled">
+										<li class="text-right">Sub Total: <%=number_to_currency current_cart.sub_total %></li>
+										<li class="text-right">tax: $0.00</li>
+										<li class="text-right">Shipping: <strike>$5.99</strike></li>
+										<li class="text-right text-muted">*FREE for a limited time</li>
+										<li class="text-right mt-2"><h5>Total: <strong><%=number_to_currency current_cart.sub_total %></strong></h5></li>
+									</ul>
+								</div>
+							</div>
+							<%= link_to 'Proceed to Checkout', checkout_path, class: 'btn btn-custom btn-block text-white border mt-3' %>
+							<% else %>
+								<h1 class="my-5">Oops! Looks like your cart is empty... Browse our products   
+								<a class="cart-link ml-2" href="/#products"><u>HERE</u></a></h1>
+						<% end %>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-<%= link_to 'checkout', checkout_path %>
+
+
+
+
+
+
+
+
+
+
+

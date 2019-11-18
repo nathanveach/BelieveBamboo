@@ -17,7 +17,10 @@
 @import "font-awesome";
 @import "magnific-popup";
 
-// Blue green background for navbar
+
+
+// App wide styles
+
 .navbar {
   background: #37b9c8;
 }
@@ -42,13 +45,29 @@
   }
 }
 
-// Product show styles
-
 .btn-custom {
   background: #37b9c8;
 }
+
+
+// Product show styles
+
 .card .card-header {
   background: #37b9c8;
+}
+
+// Cart styles
+
+.cart-img {
+  width: 100px;
+}
+
+.cart-card {
+  border: 2px solid #37b9c8;
+}
+
+.cart-link {
+  color: #37b9c8;
 }
 
 // Theme styles 
