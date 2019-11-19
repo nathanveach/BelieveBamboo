@@ -1,13 +1,59 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card bg-light mt-5">
+				<div class="card-title text-center mt-3">
+					<h5>Shipping Information</h5>				
+				</div>
+				<%= form_for @order, url: checkout_path do |f| %>
+					<div class="form-group mx-1">
+						<%= f.label :email %>
+						<%= f.email_field :email, autofocus: true, placeholder: 'JohnDoe@Example.com', class: 'form-control' %>
+					</div>
+					<div class="form-inline">
+						<div class="form-group mx-1">
+							<%= f.text_field :first_name, placeholder: 'First Name', required: true, class: 'form-control' %>
+						</div>
+						<div class="form-group ml-2">
+							<%= f.text_field :last_name, placeholder: 'Last Name', required: true, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group mx-1 mt-3">
+						<%= f.country_select :country, priority_countries = ["US"], options = {}, html_options = {:class => "form-control", :required => "true"} %>
+					</div>
+					<div class="form-group mx-1 mt-3">
+						<%= f.text_field :street_address, placeholder: 'Street Address', required: true, class: 'form-control' %>
+					</div>
+					<div class="form-group mx-1 mt-3">
+						<%= f.text_field :address2, placeholder: 'Apt, Suite, Bldg, Gate Code. (optional)', required: true, class: 'form-control' %>
+					</div>
+					<div class="form-group mx-1">
+						<%= f.text_field :city, placeholder: 'City', required: true, class: 'form-control' %>
+					</div>
+					<div class="form-inline mt-3 mx-1">
+						<div class="form-group">
+							<%= f.text_field :state, placeholder: 'State/Province', required: true, class: 'form-control' %>
+						</div>
+						<div class="form-group ml-2">
+							<%= f.text_field :zip, placeholder: 'Postal Code', required: true, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="mx-5 my-3">
+					<%= f.submit "Pay #{number_to_currency current_cart.sub_total}", class: 'btn btn-success btn-block text-center' %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
 <%= form_for @order, url: checkout_path do |f| %>
-	<%= f.label :email %>
-	<%= f.email_field :email, autofocus: true, placeholder: 'JohnDoe@Example.com', required: true %>
 
-	<%= f.label :name %>
-	<%= f.text_field :name, placeholder: 'Gimme ur Name Bitch', required: true %>
-
-	<%= f.label :shipping_address %>
-	<%= f.text_area :address, placeholder: '123 fck u lane', required: true %>
-
-	<%= f.submit "Pay #{number_to_currency current_cart.sub_total}" %>
 
 	<% end %>
