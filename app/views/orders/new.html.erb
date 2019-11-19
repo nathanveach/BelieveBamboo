@@ -3,9 +3,9 @@
 		<div class="col-md-6">
 			<div class="card bg-light mt-5">
 				<div class="card-body">
-					<ul class="list-unstyled">
+					<ul class="list-unstyled my-4">
 						<% @items.each do |i| %>
-							<li class="media">
+							<li class="media my-4">
 								<%= link_to i.product do %>
 									<%= image_tag i.product.image, class: 'cart-img mr-3' %>
 								<% end %>
@@ -17,6 +17,7 @@
 						<% end %>
 					</ul><hr/>
 					<p class="text-right mr-3"><strong>Sub Total:</strong> <%=number_to_currency current_cart.sub_total %></p>
+					<p class="text-muted text-right my-n3 mr-3">*Taxes included</p>
 				</div>
 			</div>
 		</div>
