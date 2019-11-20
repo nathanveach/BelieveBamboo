@@ -15,7 +15,6 @@
 									<% number_to_currency i.price %> x <%= i.quantity %> = <%= number_to_currency (i.price * i.quantity) %></p>
 								</div>
 							</li>
-						<% end %>
 					</ul><hr/>
 					<p class="text-right mr-3"><strong>Sub Total:</strong> <%=number_to_currency current_cart.sub_total %></p>
 					<p class="text-muted text-right my-n3 mr-3">*Taxes included</p>
@@ -33,20 +32,20 @@
 					<div class="row">
 						<div class="col">
 							<div class="form-group mx-1">
-								<%= f.text_field :first_name, placeholder: 'First Name', required: true, class: 'form-control', name: 'firstname' %>
+								<%= f.text_field :first_name, placeholder: 'First Name', class: 'form-control', name: 'firstname' %>
 							</div>
 						</div>
 						<div class="col">
 							<div class="form-group mx-1">
-								<%= f.text_field :last_name, placeholder: 'Last Name', required: true, class: 'form-control', name: 'lastname' %>
+								<%= f.text_field :last_name, placeholder: 'Last Name', class: 'form-control', name: 'lastname' %>
 							</div>
 						</div>
 					</div>
 					<div class="form-group mx-1 mt-1">
-						<%= f.country_select :country, priority_countries = ["US"], options = {}, html_options = {:class => "form-control", :required => "true", :name => "country"} %>
+						<%= f.country_select :country, priority_countries = ["US"], options = {}, html_options = {:class => "form-control", :name => "country"} %>
 					</div>
 					<div class="form-group mx-1">
-						<%= f.text_field :street_address, placeholder: 'Street Address', required: true, class: 'form-control', name: 'address' %>
+						<%= f.text_field :street_address, placeholder: 'Street Address', class: 'form-control', name: 'address' %>
 					</div>
 					<div class="form-group mx-1">
 						<%= f.text_field :address2, placeholder: 'Apt, Suite, Bldg, Gate Code. (optional)', class: 'form-control' %>
@@ -54,22 +53,22 @@
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group mx-1">
-								<%= f.text_field :city, placeholder: 'City', required: true, class: 'form-control', name: 'city' %>
+								<%= f.text_field :city, placeholder: 'City', class: 'form-control', name: 'city' %>
 							</div>
 						</div>
 						<div class="col">
 							<div class="form-group mx-1">
-								<%= f.text_field :state, placeholder: 'State/Province', required: true, class: 'form-control', name: 'state' %>
+								<%= f.text_field :state, placeholder: 'State/Province', class: 'form-control', name: 'state' %>
 							</div>
 						</div>
 						<div class="col">
 							<div class="form-group mx-1">
-								<%= f.text_field :zip, placeholder: 'Postal Code', required: true, class: 'form-control', name: 'zip' %>
+								<%= f.text_field :zip, placeholder: 'Postal Code', class: 'form-control', name: 'zip', id: 'zip' %>
 							</div>
 						</div>
 					</div>
 					<div class="mx-5 my-3">
-					  <a href="" class="btn btn-success btn-block text-center" data-toggle="modal" data-target="#modalCheckoutForm" id="checkoutModal">Calculate Shipping</a>
+					  <button class="btn btn-success btn-block text-center" data-toggle="modal" data-target="#modalCheckoutForm" id="checkoutModal">Calculate Shipping</button>
 					</div>
 			</div>
 		</div>
@@ -85,6 +84,15 @@
         <h4 class="modal-title w-100 font-weight-bold">Payment Information</h4>
       </div>
       <div class="modal-body mx-3">
+      	<h4 class="text-center">** Free Shipping **</h4>
+      	<p class="text-right mt-4"><strong><%= i.quantity %></strong> x <%= i.product.title %>
+					<% number_to_currency i.price %></p><hr/>
+					<ul class="list-unstyled">
+						<li class="text-right">Sub Total: <%=number_to_currency current_cart.sub_total %></li>
+						<li class="text-right">Tax: $0.00</li>
+						<li class="text-right">Shipping: <strike>$5.99</strike></li>
+						<li class="text-right mt-2"><h5>Total: <strong><%=number_to_currency current_cart.sub_total %></strong></h5></li>
+					</ul>
         <div class="md-form mb-5">
         <h6 class="mt-3">Name on Card: </h6>
 					<div class="form-group">
@@ -117,10 +125,11 @@
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
- 				<%= f.submit "Pay", class: 'btn btn-success btn-block text-center', id: 'realSubmit' %>
+ 				<%= f.submit "Pay", class: 'btn btn-success btn-block text-center', id: 'realSubmit', "data-dismiss": "modal" %>
       </div>
     </div>
   </div>
-</div>
+</div
+<% end %>
 <% end %>
 
