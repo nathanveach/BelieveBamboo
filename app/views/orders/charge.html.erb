@@ -1,17 +1,55 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-8 offset-md-2">
+		<div class="col-md-6">
+			<div class="card bg-light mt-5">
+				<div class="card-body">
+					<ul class="list-unstyled my-4">
+						<% @items.each do |i| %>
+							<li class="media my-4">
+								<%= link_to i.product do %>
+									<%= image_tag i.product.image, class: 'cart-img mr-3' %>
+								<% end %>
+								<div class="media-body text-center mt-4 w-75">
+									<p><%= i.product.title %>
+									<% number_to_currency i.price %> x <%= i.quantity %> = <%= number_to_currency (i.price * i.quantity) %></p>
+								</div>
+							</li>
+						<% end %>
+					</ul><hr/>
+					<p class="text-right mr-3"><strong>Sub Total:</strong> <%=number_to_currency current_cart.sub_total %></p>
+					<p class="text-muted text-right my-n3 mr-3">*Taxes included</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
 			<div class="card">
 				<form class="mx-3">
-							<h6>Name on Card: </h6>
-						<div class="form-group">
-					<div class="row">
+					<h6 class="mt-3">Name on Card: </h6>
+					<div class="form-group">
+						<div class="row">
 							<div class="col">
-								<input type="text" class="form-control">
+								<input type="text" class="form-control" placeholder="First">
 							</div>
 							<div class="col">
-								<input type="text" class="form-control">
+								<input type="text" class="form-control" placeholder="Last">
 							</div>
+						</div>
+					</div>
+					<div class="row mb-3">
+						<div class="col">
+							<i class="fa fa-cc-stripe fa-lg"></i>
+						</div>
+						<div class="col">
+							<i class="fa fa-cc-visa fa-lg"></i>
+						</div>
+						<div class="col">
+							<i class="fa fa-cc-mastercard fa-lg"></i>
+						</div>
+						<div class="col">
+							<i class="fa fa-cc-discover fa-lg"></i>
+						</div>
+						<div class="col">
+							<i class="fa fa-cc-amex fa-lg"></i>
 						</div>
 					</div>
 				</form>

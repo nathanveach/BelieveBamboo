@@ -10,14 +10,10 @@ class OrdersController < ApplicationController
 		if @order.update_attributes(order_params.merge(status: 'open'))
 			session[:cart_token] = nil
 			flash[:info] = "Now offering FREE Shipping on ALL orders!"
-			render :charge
+			redirect_to root_path
 		end
 	end
 
-	def charge
-
-		@order = current_cart.order
-	end
 
 	private
 	def order_params
