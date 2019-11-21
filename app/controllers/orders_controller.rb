@@ -30,6 +30,7 @@ class OrdersController < ApplicationController
 		@order = current_cart.order
 		if @order.update_attributes(order_params.merge(status: 'open'))
 			session[:cart_token] = nil
+			OrderMailer.order_email(email, firstname, lastname, country, address, optional, city, state, zip).deliver
 			flash[:success] = "Your order was successful!"
 			redirect_to root_path
 		end
