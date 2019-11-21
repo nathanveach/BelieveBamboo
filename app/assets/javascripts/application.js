@@ -57,6 +57,8 @@ $(document).on('click', '#submitBtn', function() {
     });
 
     $('#checkoutForm').submit(function(e) {
+      e.preventDefault
       $('#modalCheckoutForm').modal('toggle'); //or  $('#IDModal').modal('hide');
+      return false;
   });
 });
