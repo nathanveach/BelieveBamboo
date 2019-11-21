@@ -1,4 +1,3 @@
-<%= form_for @order, url: checkout_path, html: { id: 'checkoutForm'} do |f| %>
 <div class="container">
 	<div class="row">
 		<div class="col-md-6">
@@ -15,6 +14,7 @@
 									<% number_to_currency i.price %> x <%= i.quantity %> = <%= number_to_currency (i.price * i.quantity) %></p>
 								</div>
 							</li>
+						<% end %>
 					</ul><hr/>
 					<p class="text-right mr-3"><strong>Sub Total:</strong> <%=number_to_currency current_cart.sub_total %></p>
 					<p class="text-muted text-right my-n3 mr-3">*Taxes included</p>
@@ -26,6 +26,7 @@
 				<div class="card-title text-center mt-3">
 					<h5>Shipping Information</h5>				
 				</div>
+				<%= form_for @order, url: checkout_path, html: { id: 'checkoutForm'} do |f| %>
 					<div class="form-group mx-1">
 						<%= f.email_field :email, autofocus: true, placeholder: 'Email - For tracking info', class: 'form-control', name: 'email' %>
 					</div>
@@ -48,7 +49,7 @@
 						<%= f.text_field :street_address, placeholder: 'Street Address', class: 'form-control', name: 'address' %>
 					</div>
 					<div class="form-group mx-1">
-						<%= f.text_field :address2, placeholder: 'Apt, Suite, Bldg, Gate Code. (optional)', class: 'form-control' %>
+						<%= f.text_field :optional, placeholder: 'Apt, Suite, Bldg, Gate Code. (optional)', class: 'form-control' %>
 					</div>
 					<div class="row">
 						<div class="col-md-4">
@@ -63,12 +64,12 @@
 						</div>
 						<div class="col">
 							<div class="form-group mx-1">
-								<%= f.text_field :zip, placeholder: 'Postal Code', class: 'form-control', name: 'zip', id: 'zip' %>
+								<%= f.text_field :zip, placeholder: 'Postal Code', class: 'form-control', name: 'zip' %>
 							</div>
 						</div>
 					</div>
 					<div class="mx-5 my-3">
-					  <button class="btn btn-success btn-block text-center" data-toggle="modal" data-target="#modalCheckoutForm" id="checkoutModal">Calculate Shipping</button>
+					  <button class="btn btn-block text-center btn-custom text-white" data-toggle="modal" data-target="#modalCheckoutForm" id="checkoutModal" type="button">Calculate Shipping</button>
 					</div>
 			</div>
 		</div>
@@ -84,52 +85,60 @@
         <h4 class="modal-title w-100 font-weight-bold">Payment Information</h4>
       </div>
       <div class="modal-body mx-3">
-      	<h4 class="text-center">** Free Shipping **</h4>
-      	<p class="text-right mt-4"><strong><%= i.quantity %></strong> x <%= i.product.title %>
-					<% number_to_currency i.price %></p><hr/>
-					<ul class="list-unstyled">
+      	<h4 class="text-center mb-3">** Free Shipping **</h4>
+      	<% @items.each do |i| %>
+      	<p class="text-right my-n1">
+      		<strong><%= i.quantity %></strong> x <%= i.product.title %>
+					<% number_to_currency i.price %>
+				</p>
+				<% end %>
+					<hr class="my-3"/>
+					<ul class="list-unstyled mt-n2"><small class="text-muted">
 						<li class="text-right">Sub Total: <%=number_to_currency current_cart.sub_total %></li>
 						<li class="text-right">Tax: $0.00</li>
 						<li class="text-right">Shipping: <strike>$5.99</strike></li>
-						<li class="text-right mt-2"><h5>Total: <strong><%=number_to_currency current_cart.sub_total %></strong></h5></li>
+						<li class="text-right"></small>Total: <strong><%=number_to_currency current_cart.sub_total %></strong></li>
 					</ul>
-        <div class="md-form mb-5">
-        <h6 class="mt-3">Name on Card: </h6>
-					<div class="form-group">
-						<div class="row">
-							<div class="col">
-								<input type="text" class="form-control" placeholder="First">
-							</div>
-							<div class="col">
-								<input type="text" class="form-control" placeholder="Last">
+	        <div class="md-form mb-5">
+						<div class="form-group mt-n4">
+			        <%= label_tag "Name on Card" %>
+							<div class="row">
+								<div class="col">
+									<input type="text" class="form-control" placeholder="First">
+								</div>
+								<div class="col">
+									<input type="text" class="form-control" placeholder="Last">
+								</div>
 							</div>
 						</div>
+						<div class="field form-group">
+	            <%= label_tag "Card Number" %>
+	            <div id="card-element" class="form-control"></div>
+	            <div id="card-errors" role="alert"></div>
+	          </div>
+					<div class="row mt-4 mb-n4 ml-2">
+						<div class="col">
+							<i class="fa fa-cc-stripe fa-lg"></i>
+						</div>
+						<div class="col">
+							<i class="fa fa-cc-visa fa-lg"></i>
+						</div>
+						<div class="col">
+							<i class="fa fa-cc-mastercard fa-lg"></i>
+						</div>
+						<div class="col">
+							<i class="fa fa-cc-discover fa-lg"></i>
+						</div>
+						<div class="col">
+							<i class="fa fa-cc-amex fa-lg"></i>
+						</div>
 					</div>
-				<div class="row mt-2">
-					<div class="col">
-						<i class="fa fa-cc-stripe fa-lg"></i>
-					</div>
-					<div class="col">
-						<i class="fa fa-cc-visa fa-lg"></i>
-					</div>
-					<div class="col">
-						<i class="fa fa-cc-mastercard fa-lg"></i>
-					</div>
-					<div class="col">
-						<i class="fa fa-cc-discover fa-lg"></i>
-					</div>
-					<div class="col">
-						<i class="fa fa-cc-amex fa-lg"></i>
-					</div>
-				</div>
-
-      </div>
-      <div class="modal-footer d-flex justify-content-center">
- 				<%= f.submit "Pay", class: 'btn btn-success btn-block text-center', id: 'realSubmit', "data-dismiss": "modal" %>
-      </div>
+	      </div>
+	      <div class="modal-footer d-flex justify-content-center">
+	 				<%= f.submit "Pay #{number_to_currency current_cart.sub_total}", class: 'btn btn-block text-center btn-custom text-white', id: 'submitBtn' %>
+	      </div>
     </div>
   </div>
-</div
-<% end %>
+</div>
 <% end %>
 

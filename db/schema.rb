@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_235908) do
     t.string "first_name"
     t.string "last_name"
     t.string "street_address"
-    t.string "address2"
+    t.string "optional"
     t.string "state"
     t.string "zip"
     t.string "country"

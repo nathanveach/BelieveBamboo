@@ -20,7 +20,8 @@
 //= require_tree .
 
 
-$(document).on('click', '#checkoutModal', function() {
+
+$(document).on('click', '#submitBtn', function() {
     $('#checkoutForm').validate({
       // Specify validation rules
       rules: {
@@ -54,4 +55,8 @@ $(document).on('click', '#checkoutModal', function() {
         email: "Please enter a valid email address"
       },
     });
+
+    $('#checkoutForm').submit(function(e) {
+      $('#modalCheckoutForm').modal('toggle'); //or  $('#IDModal').modal('hide');
   });
+});
