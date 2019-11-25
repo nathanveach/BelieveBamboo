@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_065739) do
+ActiveRecord::Schema.define(version: 2019_11_25_070743) do
 
   create_table "customers", force: :cascade do |t|
     t.string "email"
@@ -36,13 +36,13 @@ ActiveRecord::Schema.define(version: 2019_11_25_065739) do
   end
 
   create_table "orders", force: :cascade do |t|
+    t.string "email"
     t.decimal "sub_total", precision: 15, scale: 2, null: false
     t.string "status", default: "cart"
     t.string "stripeToken"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "token"
-    t.integer "customer_id"
     t.string "first_name"
     t.string "last_name"
     t.string "street_address"
