@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show]
   get '/cart', to: 'order_items#index'
   resources :order_items, path: '/cart/items'
-  get '/cart/checkout', to: 'orders#new', as: :checkout
-  patch '/cart/checkout', to: 'orders#create'
+  get '/checkout', to: 'orders#new'
+  patch '/checkout', to: 'orders#create'
   get '/about', to: 'pages#about'
   get '/contact', to: 'pages#contact'
+  get '/shipping-information', to: 'customers#new', as: :customer
+  post '/shipping-information', to: 'customers#create'
 end
