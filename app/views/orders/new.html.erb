@@ -27,28 +27,7 @@
 					<h5>Shipping Information</h5>				
 				</div>
 				<%= form_for @order, url: checkout_path, html: { id: 'checkoutForm'} do |f| %>
-					<%= f.text_field :testname %>
-							</div>
-						</div>
-					</div>
-					<div class="mx-5 my-3">
-					  <button class="btn btn-block text-center btn-custom text-white" data-toggle="modal" data-target="#modalCheckoutForm" id="checkoutModal" type="button">Calculate Shipping</button>
-					</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<div class="modal fade" id="modalCheckoutForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Payment Information</h4>
-      </div>
-      <div class="modal-body mx-3">
-      	<h4 class="text-center mb-3">** Free Shipping **</h4>
+					<h4 class="text-center mb-3">** Free Shipping **</h4>
       	<% @items.each do |i| %>
       	<p class="text-right my-n1">
       		<strong><%= i.quantity %></strong> x <%= i.product.title %>
@@ -62,7 +41,11 @@
 						<li class="text-right">Shipping: <strike>$5.99</strike></li>
 						<li class="text-right"></small>Total: <strong><%=number_to_currency current_cart.sub_total %></strong></li>
 					</ul>
-	        <div class="md-form mb-5">						
+	        <div class="md-form mb-5">	
+	        	<div class="field form-group">
+	        		<%= label_tag "Name on Card" %>
+							<%= f.text_field :cardname, class: 'form-control', placeholder: 'First and Last Name' %>
+						</div>					
 						<div class="field form-group">
 	            <%= label_tag "Card Number" %>
 	            <div id="card-element" class="form-control"></div>
@@ -86,11 +69,20 @@
 						</div>
 					</div>
 	      </div>
-	      <div class="modal-footer d-flex justify-content-center">
 	 				<%= f.submit "Pay #{number_to_currency current_cart.sub_total}", class: 'btn btn-block text-center btn-custom text-white', id: 'submitBtn' %>
 	      </div>
     </div>
   </div>
 </div>
 <% end %>
+							</div>
+						</div>
+					</div>
+					<div class="mx-5 my-3">
+					  <button class="btn btn-block text-center btn-custom text-white" data-toggle="modal" data-target="#modalCheckoutForm" id="checkoutModal" type="button">Calculate Shipping</button>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
 

@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   patch '/cart/checkout', to: 'orders#create'
   get '/about', to: 'pages#about'
   get '/contact', to: 'pages#contact'
+  get '/shipping', to: 'customers#new', as: :customer
+  post 'shipping', to: 'customers#create'
 end

@@ -1,0 +1,82 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card bg-light mt-5">
+				<div class="card-title text-center mt-3">
+					<h4>Order Summary</h4>	
+				</div>
+				<div class="card-body">
+					<ul class="list-unstyled my-4">
+						<% @items.each do |i| %>
+							<li class="media my-4">
+								<%= link_to i.product do %>
+									<%= image_tag i.product.image, class: 'cart-img mr-3' %>
+								<% end %>
+								<div class="media-body text-center mt-4 w-75">
+									<p><%= i.product.title %>
+									<% number_to_currency i.price %> x <%= i.quantity %> = <%= number_to_currency (i.price * i.quantity) %></p>
+								</div>
+							</li>
+						<% end %>
+					</ul><hr/>
+					<p class="text-right mr-3"><strong>Sub Total:</strong> <%=number_to_currency current_cart.sub_total %></p>
+					<p class="text-muted text-right my-n3 mr-3">*Taxes included</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="card bg-light mt-5">
+				<div class="card-title text-center mt-3">
+					<h5>Shipping Information</h5>				
+				</div>
+				<%= form_for @customer, url: customer_path do |f| %>
+					<%= f.hidden_field 'order_id', value: @order.id %> 
+					<div class="form-group mx-1">
+						<%= f.email_field :email, autofocus: true, placeholder: 'Email - For tracking info', class: 'form-control' %>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div class="form-group mx-1">
+								<%= f.text_field :firstname, placeholder: 'First Name', class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group mx-1">
+								<%= f.text_field :lastname, placeholder: 'Last Name', class: 'form-control', name: 'lastname' %>
+							</div>
+						</div>
+					</div>
+					<div class="form-group mx-1 mt-1">
+						<%= f.country_select :country, priority_countries = ["US"], options = {}, html_options = {:class => "form-control"} %>
+					</div>
+					<div class="form-group mx-1">
+						<%= f.text_field :address, placeholder: 'Street Address', class: 'form-control' %>
+					</div>
+					<div class="form-group mx-1">
+						<%= f.text_field :optional, placeholder: 'Apt, Suite, Bldg, Gate Code. (optional)', class: 'form-control' %>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group mx-1">
+								<%= f.text_field :city, placeholder: 'City', class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group mx-1">
+								<%= f.text_field :state, placeholder: 'State/Province', class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group mx-1">
+								<%= f.text_field :zip, placeholder: 'Postal Code', class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+					<div class="mx-5 my-3">
+						<%= f.submit "Calculate Shipping", class: 'btn btn-block text-center btn-custom text-white' %>
+					</div>
+			<% end %>
+			</div>
+		</div>
+	</div>
+</div>

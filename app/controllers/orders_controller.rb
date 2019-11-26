@@ -8,13 +8,13 @@ class OrdersController < ApplicationController
 	def create
 		token = params[:stripeToken]
 		amount = current_cart.sub_total * 100
-		testname = params[:order][:testname]
+		email = current_cart.order.customer.email
 
 		if amount > 0
 			charge = Stripe::Charge.create({
 				amount: amount.round,
 				currency: 'usd',
-				description: testname,
+				description: email,
 				source: token,
 			})
 		end
@@ -31,6 +31,6 @@ class OrdersController < ApplicationController
 
 	private
 	def order_params
-		params.require(:order).permit(:stripeToken, :testname)
+		params.require(:order).permit(:stripeToken, :cardname)
 	end
 end
