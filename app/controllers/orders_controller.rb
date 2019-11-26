@@ -20,7 +20,8 @@ class OrdersController < ApplicationController
 		end
 
 		@order = current_cart.order
-		if @order.update_attributes(order_params.merge(status: 'open'))
+		id = @order.customer.id
+		if @order.update_attributes(order_params.merge(status: 'open', customer_id: id))
 			session[:cart_token] = nil
 			#OrderMailer.order_email(email, firstname, lastname, country, address, optional, city, state, zip).deliver
 			flash[:success] = "Your order was successful!"
@@ -31,6 +32,6 @@ class OrdersController < ApplicationController
 
 	private
 	def order_params
-		params.require(:order).permit(:stripeToken, :cardname)
+		params.require(:order).permit(:cardname)
 	end
 end

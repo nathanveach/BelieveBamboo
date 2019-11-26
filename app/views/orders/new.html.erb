@@ -27,6 +27,7 @@
 					<h5>Shipping Information</h5>				
 				</div>
 				<%= form_for @order, url: checkout_path, html: { id: 'checkoutForm'} do |f| %>
+					<%= hidden_field_tag :customer_id, :value => params[:customer_id] %>
 					<h4 class="text-center mb-3">** Free Shipping **</h4>
       	<% @items.each do |i| %>
       	<p class="text-right my-n1">
