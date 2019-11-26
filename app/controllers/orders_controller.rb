@@ -6,9 +6,18 @@ class OrdersController < ApplicationController
 	end
 
 	def create
+		customer = current_cart.order.customer
 		token = params[:stripeToken]
 		amount = current_cart.sub_total * 100
-		email = current_cart.order.customer.email
+		email = customer.email
+		firstname = customer.firstname 
+		lastname = customer.lastname
+		country = customer.country
+		address = customer.address
+		optional = customer.optional
+		city = customer.city
+		state = customer.state
+		zip = customer.zip
 
 		if amount > 0
 			charge = Stripe::Charge.create({
@@ -23,7 +32,7 @@ class OrdersController < ApplicationController
 		id = @order.customer.id
 		if @order.update_attributes(order_params.merge(status: 'open', customer_id: id))
 			session[:cart_token] = nil
-			#OrderMailer.order_email(email, firstname, lastname, country, address, optional, city, state, zip).deliver
+			OrderMailer.order_email(email, firstname, lastname, country, address, optional, city, state, zip).deliver
 			flash[:success] = "Your order was successful!"
 			redirect_to root_path
 		end

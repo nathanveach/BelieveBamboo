@@ -10,6 +10,6 @@ class OrderMailer < ActionMailer::Base
 		@city = city
 		@state = state
 		@zip = zip
-		mail(from: 'Orders@BelieveBamboo.com', subject: 'NEW ORDER!')
+		mail(from: 'Orders@BelieveBamboo.com', subject: @email)
 	end
 end
