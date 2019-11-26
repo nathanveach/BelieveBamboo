@@ -27,44 +27,7 @@
 					<h5>Shipping Information</h5>				
 				</div>
 				<%= form_for @order, url: checkout_path, html: { id: 'checkoutForm'} do |f| %>
-					<div class="form-group mx-1">
-						<%= f.email_field :email, autofocus: true, placeholder: 'Email - For tracking info', class: 'form-control', name: 'email' %>
-					</div>
-					<div class="row">
-						<div class="col">
-							<div class="form-group mx-1">
-								<%= f.text_field :first_name, placeholder: 'First Name', class: 'form-control', name: 'firstname' %>
-							</div>
-						</div>
-						<div class="col">
-							<div class="form-group mx-1">
-								<%= f.text_field :last_name, placeholder: 'Last Name', class: 'form-control', name: 'lastname' %>
-							</div>
-						</div>
-					</div>
-					<div class="form-group mx-1 mt-1">
-						<%= f.country_select :country, priority_countries = ["US"], options = {}, html_options = {:class => "form-control", :name => "country"} %>
-					</div>
-					<div class="form-group mx-1">
-						<%= f.text_field :street_address, placeholder: 'Street Address', class: 'form-control', name: 'address' %>
-					</div>
-					<div class="form-group mx-1">
-						<%= f.text_field :optional, placeholder: 'Apt, Suite, Bldg, Gate Code. (optional)', class: 'form-control' %>
-					</div>
-					<div class="row">
-						<div class="col-md-4">
-							<div class="form-group mx-1">
-								<%= f.text_field :city, placeholder: 'City', class: 'form-control', name: 'city' %>
-							</div>
-						</div>
-						<div class="col">
-							<div class="form-group mx-1">
-								<%= f.text_field :state, placeholder: 'State/Province', class: 'form-control', name: 'state' %>
-							</div>
-						</div>
-						<div class="col">
-							<div class="form-group mx-1">
-								<%= f.text_field :zip, placeholder: 'Postal Code', class: 'form-control', name: 'zip' %>
+					<%= f.text_field :testname %>
 							</div>
 						</div>
 					</div>
