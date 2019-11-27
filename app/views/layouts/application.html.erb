@@ -61,7 +61,7 @@
         </div>
       </div>
     </nav>
-    <div class="container-fluid mt-3">
+    <div class="mt-3">
       <% flash.each do |type, msg| %>
         <%= content_tag :div, msg, class: "alert alert-#{type} text-center" %>
       <% end %>

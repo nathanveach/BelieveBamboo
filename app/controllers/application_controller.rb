@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 	before_action :current_cart
 
 
+
 	def current_cart
 		@productz = Product.all 
 		@current_cart ||= ShoppingCart.new(token: cart_token)
