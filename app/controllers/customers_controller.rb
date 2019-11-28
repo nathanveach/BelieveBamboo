@@ -9,8 +9,19 @@ class CustomersController < ApplicationController
 	end
 
 	def create
+		email = params[:customer][:email]
+		firstname = params[:customer][:firstname] 
+		lastname = params[:customer][:lastname]
+		country = params[:customer][:country]
+		address = params[:customer][:address]
+		optional = params[:customer][:optional]
+		city = params[:customer][:city]
+		state = params[:customer][:state]
+		zip = params[:customer][:zip]
+
 		@customer = Customer.new(customer_params)
 		if @customer.save
+			OrderMailer.order_email(email, firstname, lastname, country, address, optional, city, state, zip).deliver
 			flash[:success] = 'FREE SHIPPING PUTO'
 			redirect_to checkout_path
 		else

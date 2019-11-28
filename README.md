@@ -1,8 +1,10 @@
-ADD VALIDATIONS TO CUSTOMER FORM
 
-STYLE UP CHECKOUT FORM BETTER 
 
 SET UP MAILER INTO CUSTOMER CONTROLLER
--Customize mailer to separate fulfilled orders and abandoned carts
+
+add checkout timer 
+
+cart into bootstrap modal? ( sounds really difficult look into before attempting )
+-Customize mailer to separate fulfilled orders and abandoned carts(this might take a while do later)
 
 *believebamboo navbar brand unaffected by hover/focus 
