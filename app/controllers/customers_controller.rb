@@ -22,7 +22,6 @@ class CustomersController < ApplicationController
 		@customer = Customer.new(customer_params)
 		if @customer.save
 			OrderMailer.order_email(email, firstname, lastname, country, address, optional, city, state, zip).deliver
-			flash[:success] = 'FREE SHIPPING PUTO'
 			redirect_to checkout_path
 		else
 			flash[:danger] = @customer.errors.full_messages.join(", ")

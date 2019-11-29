@@ -6,10 +6,10 @@ class OrdersController < ApplicationController
 	end
 
 	def create
+		customer = current_cart.order.customer
 		token = params[:stripeToken]
 		amount = current_cart.sub_total * 100
-
-
+		email = customer.email
 		if amount > 0
 			charge = Stripe::Charge.create({
 				amount: amount.round,

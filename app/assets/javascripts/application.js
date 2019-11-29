@@ -19,46 +19,38 @@
 //= require jquery.validate
 //= require_tree .
 
+	function startTimer(duration, display) {
+	    var start = Date.now(),
+	        diff,
+	        minutes,
+	        seconds;
+	    function timer() {
+	        // get the number of seconds that have elapsed since 
+	        // startTimer() was called
+	        diff = duration - (((Date.now() - start) / 1000) | 0);
 
+	        // does the same job as parseInt truncates the float
+	        minutes = (diff / 60) | 0;
+	        seconds = (diff % 60) | 0;
 
-$(document).on('click', '#submitBtn', function() {
-    $('#checkoutForm').validate({
-      // Specify validation rules
-      rules: {
-        // The key name on the left side is the name attribute
-        // of an input field. Validation rules are defined
-        // on the right side
-        firstname: "required",
-        lastname: "required",
-        country: "required",
-        address: "required",
-        city: "required",
-        state: "required",
-        zip: "required",
+	        minutes = minutes < 10 ? "0" + minutes : minutes;
+	        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        email: {
-          required: true,
-          // Specify that email should be validated
-          // by the built-in "email" rule
-          email: true
-        },
-      },
-      // Specify validation error messages
-      messages: {
-        firstname: "Please enter your firstname",
-        lastname: "Please enter your lastname",
-        country: "Please select your country",
-        address: "Please enter a valid street address",
-        city: "Please enter your city",
-        state: "Please enter your state",
-        zip: "Please enter your postal code",
-        email: "Please enter a valid email address"
-      },
-    });
+	        display.textContent = minutes + ":" + seconds; 
 
-    $('#checkoutForm').submit(function(e) {
-      e.preventDefault
-      $('#modalCheckoutForm').modal('toggle'); //or  $('#IDModal').modal('hide');
-      return false;
-  });
-});
+	        if (diff <= 0) {
+	            // add one second so that the count down starts at the full duration
+	            // example 05:00 not 04:59
+	            start = Date.now() + 1000;
+	        }
+	    };
+	    // we don't want to wait a full second before the timer starts
+	    timer();
+	    setInterval(timer, 1000);
+	}
+
+	window.onload = function () {
+	    var sevenMinutes = 60 * 7,
+	        display = document.querySelector('#time');
+	    startTimer(sevenMinutes, display);
+	};
