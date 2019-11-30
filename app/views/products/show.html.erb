@@ -5,15 +5,15 @@
  <!--Carousel Wrapper-->
     <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
       <!--Slides-->
-      <div class="carousel-inner" role="listbox">
+      <div class="carousel-inner text-center" role="listbox">
         <div class="carousel-item active">
         	<%= image_tag @product.image %>
         </div>
         <div class="carousel-item">
-        	<%= image_tag @product.image %>
+        	<%= image_tag @product.image2 %>
         </div>
         <div class="carousel-item">
-        	<%= image_tag @product.image %>
+        	<%= image_tag @product.image3 %>
         </div>
       </div>
       <!--/.Slides-->
@@ -32,10 +32,10 @@
         	<%= image_tag @product.image, class: 'img-fluid d-block w-100' %>
         </li>
         <li data-target="#carousel-thumb" data-slide-to="1">
-        	<%= image_tag @product.image, class: 'img-fluid d-block w-100' %>
+        	<%= image_tag @product.image2, class: 'img-fluid d-block w-100' %>
 				</li>
         <li data-target="#carousel-thumb" data-slide-to="2">
-        	<%= image_tag @product.image, class: 'img-fluid d-block w-100' %>
+        	<%= image_tag @product.image3, class: 'img-fluid d-block w-100' %>
         </li>
       </ol>
     </div>
