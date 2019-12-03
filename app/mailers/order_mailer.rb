@@ -1,6 +1,6 @@
 class OrderMailer < ActionMailer::Base
 	default to: 'nathanbveach@gmail.com'
-	def order_email(email, firstname, lastname, country, address, optional, city, state, zip)
+	def order_email(email, firstname, lastname, country, address, optional, city, state, zip, order)
 		@email = email
 		@firstname = firstname
 		@lastname = lastname
@@ -10,6 +10,7 @@ class OrderMailer < ActionMailer::Base
 		@city = city
 		@state = state
 		@zip = zip
+		@order = order
 		mail(from: 'Orders@BelieveBamboo.com', subject: @email)
 	end
 end
