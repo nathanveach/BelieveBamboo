@@ -2,7 +2,6 @@ class CustomersController < ApplicationController
 
 
 	def new
-
 		@order = current_cart.order
 		@items = current_cart.order.items
 		@customer = Customer.new
@@ -18,11 +17,13 @@ class CustomersController < ApplicationController
 		city = params[:customer][:city]
 		state = params[:customer][:state]
 		zip = params[:customer][:zip]
-		order = current_cart.order.items.each do |i|
-							i.product.title
-						end	
+		order = current_cart.order.items.each do			
+		end
 
+		@order = current_cart.order
+		@items = current_cart.order.items
 		@customer = Customer.new(customer_params)
+		
 		if @customer.save
 			OrderMailer.order_email(email, firstname, lastname, country, address, optional, city, state, zip, order).deliver
 			redirect_to checkout_path

@@ -44,10 +44,23 @@
   }
 }
 
+.navbar-brand .btn {
+  box-shadow: none;
+}
+
 .btn-custom {
   background: #37b9c8;
 }
 
+// Cart Modal
+
+.cart-modal-img {
+  width: 70px;
+}
+
+.text-right .btn-custom {
+  width: 300px;
+}
 
 // Product show styles
 
@@ -83,6 +96,10 @@
 .checkout-img {
   width: 60px;
   border-radius: 50%;
+}
+
+.order-page {
+  margin-top: 75px;
 }
 
 // Theme styles 

@@ -53,11 +53,11 @@
             </li>
           </ul>
         </div>
-        <div class="navbar-brand">
-          <%= link_to cart_path do %>
+        <div class="navbar-brand my-n2">
+          <button class="btn btn-lg btn-custom text-white" data-toggle="modal" data-target="#modalCart">
             <i class="fa fa-shopping-cart fa-lg"></i>
             (<%= current_cart.items_count %>)
-          <% end %>
+          </button>
         </div>
       </div>
     </nav>
@@ -67,6 +67,56 @@
       <% end %>
     </div>
     <%= yield %>
+
+     <!-- Modal: modalCart -->
+    <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <!--Header-->
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Your Cart</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <!--Body-->
+          <div class="modal-body">
+          <ul class="list-unstyled">
+            <% @items.each do |i| %>
+              <li class="media mx-3">
+                <%= link_to i.product do %>
+                  <%= image_tag i.product.image, class: 'cart-modal-img mr-3' %>
+                <% end %>
+                <div class="media-body text-right mt-4 w-75">
+                  <p><%= i.product.title %>
+                  <% number_to_currency i.price %> x <%= i.quantity %> = <%= number_to_currency (i.price * i.quantity) %></p>
+                </div>
+              </li><hr/>
+            <% end %>
+            <% if current_cart.items_count > 0 %>
+              <div class="row">
+                <div class="col">
+                  <ul class="list-unstyled">
+                    <li class="text-right">Sub Total: <%=number_to_currency current_cart.sub_total %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="text-right">
+                <%= link_to 'View Cart', cart_path, class: 'btn btn-link mt-3 mr-3' %>
+                <%= link_to 'Proceed to Checkout', customer_path, class: 'btn btn-custom text-white border mt-3' %>
+              </div>
+            <% else %>
+              <h1 class="my-5">Oops! Looks like your cart is empty... Browse our products   
+              <a class="cart-link ml-2" href="/#products"><u>HERE</u></a></h1>
+            <% end %>
+            </div>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal: modalCart -->
 
   </body>
 </html>

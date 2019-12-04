@@ -1,6 +1,7 @@
 class OrderItemsController < ApplicationController
 
 	def index
+		@order = current_cart.order
 		@items = current_cart.order.items
 	end
 

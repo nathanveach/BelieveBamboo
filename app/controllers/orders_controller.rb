@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
 				source: token,
 			})
 		end
-
+		@items = current_cart.order.items
 		@order = current_cart.order
 		id = @order.customer.id
 		if @order.update_attributes(order_params.merge(status: 'open', customer_id: id))
