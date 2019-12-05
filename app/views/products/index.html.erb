@@ -52,12 +52,12 @@
 
     <div class="row text-center">
       <% @products.each do |p| %>
-      <div class="col product-item">
+      <div class="col-4 product-item">
         <div class="card h-100 border-0">
           <%= image_tag p.image, class: 'card-img-top' %>
           <div class="card-body">
             <h4 class="card-title text-center">
-              <%= link_to "#{number_to_currency p.price}", p, class: 'text-decoration-none text-dark stretched-link' %>
+              <%= link_to "$#{p.price.round}", p, class: 'text-decoration-none text-dark stretched-link' %>
             </h4>
             <p class="card-text text-center"><strong><%= p.title %></strong></p>
           </div>
@@ -70,16 +70,14 @@
     <!-- Features Section -->
     <div class="row">
       <div class="col-lg-6">
-        <h2>Modern Business Features</h2>
-        <p>The Modern Business template by Start Bootstrap includes:</p>
+        <h2>Why Choose Bamboo?</h2>
+        <p>These sustainable reasons should be a start:</p>
         <ul>
-          <li>
-            <strong>Bootstrap v4</strong>
-          </li>
-          <li>jQuery</li>
-          <li>Font Awesome</li>
-          <li>Working contact form with validation</li>
-          <li>Unstyled page elements for easy customization</li>
+          <li>Bamboo is the <strong>fastest</strong> growing plant in the world!</li>
+          <li>Bamboo is not actually a tree, it's a type of grass</li>
+          <li>It can grow up to a meter a day, you can literally watch it grow!</li>
+          <li>Unlike trees, bamboo regrows after being harvested</li>
+          <li>An adult bamboo tree can be harvested every single year making it the perfect renewable resource alternative to plastic!</li>
         </ul>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
       </div>

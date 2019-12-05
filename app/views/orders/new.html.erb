@@ -40,13 +40,13 @@
 						<h5> Customer Information </h5>
 					</div>
 					<div class="form-check ml-5">
-						<input type="checkbox" class="form-check-input" checked required="true">
+						<input type="checkbox" class="form-check-input ml-3" checked required="true">
 						<label class="form-check-label">
-							<ul class="list-unstyled ml-3 mt-n2"><h6>
+							<ul class="list-unstyled ml-5 mt-n2"><h6>
 								<li><%= @order.customer.firstname %> <%= @order.customer.lastname %></li>
 								<li><%= @order.customer.address %> <%= @order.customer.optional %></li>
 								<li><%= @order.customer.city %> <%= @order.customer.state %> <%= @order.customer.zip %></li></h6>
-								<li class="my-n2"><u><small><%= link_to "Not you?", customer_path %></small></u></li>
+								<li class="my-n2"><u><small><%= link_to "Not right?", customer_path %></small></u></li>
 							</ul>
 						</label>
 					</div>
@@ -79,7 +79,7 @@
 					</div>
 	      </div>
 	      <div class="mx-3 mb-3">
-	 				<%= f.submit "Pay #{number_to_currency current_cart.sub_total}", class: 'btn btn-block text-center btn-custom text-white', id: 'submitBtn' %>
+	 				<%= f.submit "Pay #{number_to_currency current_cart.sub_total}", class: 'btn btn-block text-center btn-custom text-white', id: 'submitBtn', :data => {disable_with: false} %>
  				</div>
  			</div>
     </div>

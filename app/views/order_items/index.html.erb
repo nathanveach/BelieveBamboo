@@ -14,7 +14,7 @@
 									<% number_to_currency i.price %> x <%= i.quantity %> = <%= number_to_currency (i.price * i.quantity) %></h6>
 								</div>
 								<%= form_for i, method: :delete do |f| %>
-									<%= f.submit 'Remove', class: 'btn btn-danger mt-4 ml-3' %>
+									<%= f.submit 'Remove', class: 'btn btn-sm btn-danger mt-4 ml-3' %>
 								<% end %>
 							</li><hr/>
 						<% end %>
