@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>BelieveBamboo</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://believebamboo.s3-us-west-1.amazonaws.com/bblogo.png">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +19,7 @@
           <button class="navbar-toggler mr-n4" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <%= link_to 'BelieveBamboo', root_path, class: 'navbar-brand' %>
+          <%= link_to 'BelieveBamboo', root_path, class: 'navbar-brand bambsoo my-n3 ml-5 mr-n1' %>
           
         </div>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -54,7 +55,7 @@
           </ul>
         </div>
         <div class="navbar-brand my-n2">
-          <button class="btn btn-lg btn-custom text-white" data-toggle="modal" data-target="#modalCart">
+          <button class="btn btn-lg btn-custom text-white mx-n2" data-toggle="modal" data-target="#modalCart">
             <i class="fa fa-shopping-cart fa-lg"></i>
             (<%= current_cart.items_count %>)
           </button>
@@ -89,8 +90,8 @@
                   <%= image_tag i.product.image, class: 'cart-modal-img mr-3' %>
                 <% end %>
                 <div class="media-body text-right mt-4 w-75">
-                  <p><%= i.product.title %>
-                  <% number_to_currency i.price %> x <%= i.quantity %> = <%= number_to_currency (i.price * i.quantity) %></p>
+                  <p><small><%= i.product.title %>
+                  <% number_to_currency i.price %> x <%= i.quantity %> = <%= number_to_currency (i.price * i.quantity) %></small></p>
                 </div>
               </li><hr/>
             <% end %>

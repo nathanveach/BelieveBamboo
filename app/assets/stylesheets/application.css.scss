@@ -20,6 +20,18 @@
 
 // App wide styles
 
+@font-face {
+  font-family: 'Hanalei-Regular';
+  src: url('BambuF.ttf');
+}
+
+
+.bamboo {
+  font-family: 'Hanalei-Regular';
+  font-size: 4em;
+}
+
+
 .navbar {
   background: #37b9c8;
 }
