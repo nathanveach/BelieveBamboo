@@ -21,23 +21,22 @@
 // App wide styles
 
 @font-face {
-  font-family: 'Hanalei-Regular';
-  src: url('BambuF.ttf');
+  font-family: 'BambuC';
+  src: url('BambuC.ttf');
 }
 
 
 .bamboo {
-  font-family: 'Hanalei-Regular';
-  font-size: 4em;
+  font-family: 'BambuC';
+  font-size: 2em;
 }
 
+.logo {
+  padding-bottom: -5px;
+}
 
 .navbar {
   background: #37b9c8;
-}
-
-.nav-custom .navbar-brand {
-  margin-left: 5rem;
 }
 
 .navbar-brand a {
@@ -72,6 +71,14 @@
 
 .text-right .btn-custom {
   width: 200px;
+}
+
+// Product Index (Homepage) Styles
+
+.bamboo-title {
+  font-family: 'BambuC';
+  font-size: 4em;
+  color: #37b9c8;
 }
 
 // Product show styles
