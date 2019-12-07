@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_30_193501) do
+ActiveRecord::Schema.define(version: 2019_12_07_071542) do
 
   create_table "customers", force: :cascade do |t|
-    t.string "email"
-    t.string "firstname"
-    t.string "lastname"
-    t.string "address"
+    t.string "email", null: false
+    t.string "firstname", null: false
+    t.string "lastname", null: false
+    t.string "address", null: false
     t.string "optional"
-    t.string "city"
-    t.string "state"
-    t.string "country"
-    t.string "zip"
+    t.string "city", null: false
+    t.string "state", null: false
+    t.string "country", null: false
+    t.string "zip", null: false
+    t.bigint "order_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "order_id"
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -40,22 +40,22 @@ ActiveRecord::Schema.define(version: 2019_11_30_193501) do
     t.decimal "sub_total", precision: 15, scale: 2, null: false
     t.string "status", default: "cart"
     t.string "stripeToken"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "token"
     t.string "cardname"
     t.bigint "customer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.decimal "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "image"
+    t.string "title", null: false
+    t.text "description", null: false
+    t.decimal "price", precision: 15, scale: 2, null: false
+    t.string "image", null: false
     t.string "image2"
     t.string "image3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
