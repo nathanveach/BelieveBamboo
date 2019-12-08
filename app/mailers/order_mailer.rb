@@ -1,5 +1,5 @@
 class OrderMailer < ActionMailer::Base
-	default to: 'nathanbveach@gmail.com'
+	default to: 'believebamboo714@gmail.com'
 	def order_email(email, firstname, lastname, country, address, optional, city, state, zip, order)
 		@email = email
 		@firstname = firstname
