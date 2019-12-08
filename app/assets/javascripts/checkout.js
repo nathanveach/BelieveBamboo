@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function(){
   
-  var stripe = Stripe('pk_test_dyqAQ4mcP9uEvElyi5Hs6zIx00Lhoe3DGa');
+  var stripe = Stripe('pk_live_nJTJZKJ33wB1iT1MQ1zuF2KU0080JcScOw');
   var elements = stripe.elements()
   
   var card = elements.create('card');
