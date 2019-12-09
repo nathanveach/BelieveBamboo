@@ -43,11 +43,16 @@
 
 		</div>
 		<div class="col">
-			<h1><%= @product.title %></h1>
+			<h2><%= @product.title %></h2>
 			<%= form_tag order_items_path do %>
 				<%= hidden_field_tag :product_id, @product.id %>
 				<div class="ml-3 my-4">
 					<strong><%= number_to_currency @product.price %></strong>
+            <i class="fa fa-star ml-5"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i> ( <%= @product.reviews.count %> )
 				</div><hr/>
 				<div class="row mt-5">
 					<div class="col-md-3">
@@ -59,12 +64,51 @@
 				</div>
 				<p class="text-muted">*Limited time FREE shipping on ALL orders internationally.</p>
 			<% end %>
+
+      <!-- Begin card with nav tabs -->
 			<div class="card mt-5">
-				<h6 class="card-header text-white">Description:</h6>
-				<div class="card-body">
-					<%= @product.description %>
+        <div class="card-header">
+          <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item">
+              <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="true">Reviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="specs-tab" data-toggle="tab" href="#specs" role="tab" aria-controls="specs" aria-selected="true">Specs</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+              <%= @product.description %>
+            </div>
+            <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+              <ul id="reviewz">
+              <% @product.reviews.each do |p| %>
+                <li class="media">
+                  <%= image_tag p.avatar, class: 'review-avatar mr-3 align-self-center rounded' %><small>
+                  <div class="media-body">
+                    <h5 class="d-inline mr-3"><%= p.name %></h5>
+                    <% p.stars.times do %>
+                      <i class="fa fa-star"></i>
+                    <% end %>
+                    <p class="text-muted">Country: <%= p.country %></p>                    
+                    <p><%= p.comments %></p>
+                  </div></small>
+                </li><hr/>
+                  <p class="text-right">Write a Review</p>
+                </ul>
+              <% end %>
+            </div>
+            <div class="tab-pane fade" id="specs" role="tabpanel" aria-labelledby="specs-tab">
+            </div>
+          </div>
 				</div>
 			</div>
+      <!-- /card -->
 		</div>
 	</div>
 </div>

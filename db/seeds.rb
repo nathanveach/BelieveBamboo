@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Products 
 
 Product.create(
 	title: 'Bamboo Drinking Straws [10 pk]', 
@@ -36,3 +37,14 @@ Product.create(
 	image2: 'https://believebamboo.s3-us-west-1.amazonaws.com/cutlery(2)400x400.jpg', 
 	image3: 'https://believebamboo.s3-us-west-1.amazonaws.com/cutlery(3)400x400.jpg'
 )
+
+# Reviews
+
+Review.create(
+	name: 'Gary Lutz',
+	avatar: 'https://anobium.files.wordpress.com/2013/05/dsc_0411.jpg?w=584',
+	comments: 'These straws are legit! 5 stars I have only used 1 for the last month just make sure to clean them with the brush before using them you can even throw them in the dishwasher!',
+	stars: 5,
+	country: 'US',
+	product_id: 1
+	)

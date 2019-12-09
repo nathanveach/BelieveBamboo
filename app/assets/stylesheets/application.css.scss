@@ -84,12 +84,22 @@
 
 // Product show styles
 
-.card .card-header {
-  background: #37b9c8;
+.nav-pills .nav-link.active {
+  background-color: #37b9c8;
+  color: white;
+}
+
+.nav-pills .nav-link {
+  background-color: white;
+  color: black;
 }
 
 .carousel .carousel-item {
   height: 450px;
+}
+
+.review-avatar {
+  width: 100px;
 }
 
 // Cart styles
