@@ -11,7 +11,14 @@
 Product.create(
 	title: 'Bamboo Drinking Straws [10 pk]', 
 	price: 10, 
-	description: 'These eco-friendly bamboo straws are not only sustainable but also completely bio-degradable. Perfect for events or parties these organic straws are sure to be a conversation starter!', 
+	description: "The idea that started it all.  These eco-friendly bamboo straws are not only sustainable, bio-degradable,
+ but also extremely durable. Perfect for events or every day use each one of these straws can last weeks.",
+	description2: "Also included is a versatile cleaning brush making cleaning an ease.  Ofcourse, you can also throw them in the dishwasher for easier 
+cleaning.  These straws are very resilient to moisture and heat some of our customers prefer boiling them in water to
+disinfect.  Join the bamboo movement today and make a difference in the fight against plastic!",
+	spec1: '10x Bamboo Straws - 7.68in / 19.5 cm',
+	spec2: '1x Cleaning brush 7.87 in / 20 cm',
+	spec3: 'Packing box size - 8.66 in x 2.56 in x 0.98 in / 22 cm x 6.5 cm x 2.5 cm',
 	image: 'https://believebamboo.s3-us-west-1.amazonaws.com/bamboo-straws400x400.jpg', 
 	image2: 'https://believebamboo.s3-us-west-1.amazonaws.com/straws(2)400x400.jpg', 
 	image3: 'https://believebamboo.s3-us-west-1.amazonaws.com/straw(3)400x400.jpg'
@@ -69,7 +76,7 @@ Review.create(
 	)
 
 Review.create(
-	name: 'Barry Sandoval',
+	name: 'Barry S.',
 	avatar: 'https://ae01.alicdn.com/kf/UTB8Knc0wYPJXKJkSafSq6yqUXXav.jpg',
 	country: 'BR',
 	comments: 'Very good price and the shipping costs were reasonable albeit delivery could have been a bit faster',
@@ -87,7 +94,7 @@ Review.create(
 	)
 
 Review.create(
-	name: 'David Weiss',
+	name: 'David W',
 	avatar: 'https://s3-us-west-2.amazonaws.com/snap-sale/20180324200210/no-avatar.png',
 	country: 'US',
 	comments: 'good product by a good company its game over for plastics',

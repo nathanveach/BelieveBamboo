@@ -28,14 +28,14 @@
       </a>
       <!--/.Controls & Thumbnails -->
       <ol class="carousel-indicators">
-        <li data-target="#carousel-thumb" data-slide-to="0" class="active">
-        	<%= image_tag @product.image, class: 'img-fluid d-block w-100' %>
+        <li data-target="#carousel-thumb" data-slide-to="0" class="active mx-3">
+        	<%= image_tag @product.image, class: 'd-block show-thumb' %>
         </li>
-        <li data-target="#carousel-thumb" data-slide-to="1">
-        	<%= image_tag @product.image2, class: 'img-fluid d-block w-100' %>
+        <li data-target="#carousel-thumb" data-slide-to="1" class="mx-3">
+        	<%= image_tag @product.image2, class: 'd-block show-thumb' %>
 				</li>
-        <li data-target="#carousel-thumb" data-slide-to="2">
-        	<%= image_tag @product.image3, class: 'img-fluid d-block w-100' %>
+        <li data-target="#carousel-thumb" data-slide-to="2" class="mx-3">
+        	<%= image_tag @product.image3, class: 'd-block show-thumb' %>
         </li>
       </ol>
     </div>
@@ -62,29 +62,51 @@
 						<%= submit_tag 'Add to Cart', class: 'btn btn-custom btn-block text-white' %>
 					</div>
 				</div>
-				<p class="text-muted">*Limited time FREE shipping on ALL orders internationally.</p>
+        <div class="row mt-4 mb-n4 ml-3">
+          <div class="col">
+            <i class="fa fa-cc-stripe fa-lg"></i>
+          </div>
+          <div class="col">
+            <i class="fa fa-cc-visa fa-lg"></i>
+          </div>
+          <div class="col">
+            <i class="fa fa-cc-mastercard fa-lg"></i>
+          </div>
+          <div class="col">
+            <i class="fa fa-cc-discover fa-lg"></i>
+          </div>
+          <div class="col">
+            <i class="fa fa-cc-amex fa-lg"></i>
+          </div>
+        </div>
 			<% end %>
 
       <!-- Begin card with nav tabs -->
 			<div class="card mt-5">
         <div class="card-header">
-          <ul class="nav nav-pills card-header-pills">
-            <li class="nav-item">
+          <ul class="nav nav-pills card-header-pills row">
+            <li class="nav-item col mx-n2 text-center">
               <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item col mx-n3 text-center">
               <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="true">Reviews</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" id="specs-tab" data-toggle="tab" href="#specs" role="tab" aria-controls="specs" aria-selected="true">Specs</a>
+            <li class="nav-item col mx-n2 text-center">
+              <a class="nav-link" id="specs-tab" data-toggle="tab" href="#specs" role="tab" aria-controls="specs" aria-selected="true"> Specs </a>
             </li>
           </ul>
         </div>
         <div class="card-body">
           <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-              <%= @product.description %>
+          <!-- Description tab -->
+            <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab"><small>
+              <p><%= @product.description %></p>
+              <p><%= @product.description2 %></p>
+              <p class="mt-2">Bamboo-<b>kun</b> is the name for the antimicrobial/antifungal bio-agent found in bamboo.  It's bamboo's natural defense against 
+              harmful pests.  It is the reason why bamboo cultivation does not require any pesticides.  This makes bamboo the perfect natural replacement
+              for single use plastics.  Bamboo also produces 35% more oxygen than plants of similar size, while at the same time requiring far less water!</p></small>
             </div>
+          <!-- Reviews tab -->
             <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
               <ul id="reviewz">
               <% @product.reviews.each do |p| %>
@@ -100,10 +122,21 @@
                   </div></small>
                 </li><hr/>
                 <% end %>
-                </ul>
+              </ul>
               <p class="text-right">Write a Review</p>
             </div>
+          <!-- Specs tab -->
             <div class="tab-pane fade" id="specs" role="tabpanel" aria-labelledby="specs-tab">
+              <small><h6>Product material:</h6> 
+              <p class="mt-n2">100% organic bpa-free natural bamboo</p>
+              <h6>Product dimensions: </h6> 
+              <ul class="mt-n2">
+                <li><%= @product.spec1 %></li>
+                <li><%= @product.spec2 %></li>
+                <li><%= @product.spec3 %></li>
+              </ul>
+              <h6>Product SKU: </h6>
+              <p># <%= SecureRandom.hex(8) %></p></small>
             </div>
           </div>
 				</div>

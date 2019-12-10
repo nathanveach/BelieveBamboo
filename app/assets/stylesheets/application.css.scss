@@ -84,6 +84,11 @@
 
 .custom-img {
   height: 20em;
+  border: 2px solid white;
+}
+
+.form-inline .form-control {
+  width: 16em;
 }
 
 // Product show styles
@@ -100,6 +105,11 @@
 
 .carousel .carousel-item {
   height: 450px;
+}
+
+.show-thumb {
+  width: 3em;
+
 }
 
 .review-avatar {

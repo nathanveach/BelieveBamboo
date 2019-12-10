@@ -50,10 +50,14 @@ ActiveRecord::Schema.define(version: 2019_12_09_212346) do
   create_table "products", force: :cascade do |t|
     t.string "title", null: false
     t.text "description", null: false
+    t.text "description2"
     t.decimal "price", precision: 15, scale: 2, null: false
     t.string "image", null: false
     t.string "image2"
     t.string "image3"
+    t.string "spec1"
+    t.string "spec2"
+    t.string "spec3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
