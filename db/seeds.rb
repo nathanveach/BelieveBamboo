@@ -39,6 +39,16 @@ Product.create(
 )
 
 # Reviews
+# Product 1 (straws)
+
+Review.create(
+	name: 'Ashley M.',
+	avatar: 'https://ae01.alicdn.com/kf/UTB8YNtDxv2JXKJkSanrq6y3lVXaW.jpg',
+	country: 'UK',
+	comments: 'These bad boys are my new go-to straw.  They are not all the same color but thats okay each one lasts for weeks.',
+	stars: 5,
+	product_id: 1
+	)
 
 Review.create(
 	name: 'Gary Lutz',
@@ -48,3 +58,59 @@ Review.create(
 	country: 'US',
 	product_id: 1
 	)
+
+Review.create(
+	name: 'Danny C.',
+	avatar: 'https://pbs.twimg.com/profile_images/426550101033500672/OxfjQN52_400x400.jpeg',
+	country: 'CN',
+	comments: ' very good bamboo is very sturdy like metal but unlike metal straws these dont hurt you in the teeth.. delivery took long time 3 week',
+	stars: 4,
+	product_id: 1,
+	)
+
+Review.create(
+	name: 'Barry Sandoval',
+	avatar: 'https://ae01.alicdn.com/kf/UTB8Knc0wYPJXKJkSafSq6yqUXXav.jpg',
+	country: 'BR',
+	comments: 'Very good price and the shipping costs were reasonable albeit delivery could have been a bit faster',
+	stars: 4,
+	product_id: 1
+	)
+
+Review.create(
+	name: 'Leah',
+	avatar: 'https://s3-us-west-2.amazonaws.com/snap-sale/20180324200210/no-avatar.png',
+	country: 'US',
+	comments: '',
+	stars: 4,
+	product_id: 1
+	)
+
+Review.create(
+	name: 'David Weiss',
+	avatar: 'https://s3-us-west-2.amazonaws.com/snap-sale/20180324200210/no-avatar.png',
+	country: 'US',
+	comments: 'good product by a good company its game over for plastics',
+	stars: 5,
+	product_id: 1
+	)
+
+Review.create(
+	name: 'Jack',
+	avatar: 'https://s3-us-west-2.amazonaws.com/snap-sale/20180324200210/no-avatar.png',
+	country: 'US',
+	comments: '',
+	stars: 5,
+	product_id: 1
+	)
+
+Review.create(
+	name: 'CP',
+	avatar: 'https://ae01.alicdn.com/kf/UTB8ExbAxpfJXKJkSamHq6zLyVXaa.jpg',
+	country: 'US',
+	comments: 'I always loved bamboos design and asthetic and these straws are no different very unique very cool',
+	stars: 5,
+	product_id: 1
+	)
+
+# Product 2 (toothbrushes)

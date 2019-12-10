@@ -52,7 +52,7 @@
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i> ( <%= @product.reviews.count %> )
+            <i class="fa fa-star-half-o"></i> ( <%= @product.reviews.count %> )
 				</div><hr/>
 				<div class="row mt-5">
 					<div class="col-md-3">
@@ -99,9 +99,9 @@
                     <p><%= p.comments %></p>
                   </div></small>
                 </li><hr/>
-                  <p class="text-right">Write a Review</p>
+                <% end %>
                 </ul>
-              <% end %>
+              <p class="text-right">Write a Review</p>
             </div>
             <div class="tab-pane fade" id="specs" role="tabpanel" aria-labelledby="specs-tab">
             </div>
