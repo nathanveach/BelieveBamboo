@@ -150,3 +150,136 @@ Review.create(
 	)
 
 # Product 2 (toothbrushes)
+Review.create(
+name: 'James L',
+avatar: 'https://ae01.alicdn.com/kf/U01ef0f28254c4be1bc45035f09512523K.jpg',
+country: 'US',
+comments: 'bought these for the whole fam and everyone loves them so far',
+stars: 5,
+product_id: 2
+)
+
+Review.create(
+name: 'Sally',
+avatar: 'https://ae01.alicdn.com/kf/U6f46672d72694594a8d5c1acdb3d0387D.jpg',
+country: 'US',
+comments: 'the shape takes a little getting used too, but feels good to be using something biodegradable',
+stars: 4,
+product_id: 2
+)
+
+Review.create(
+name: 'JP',
+avatar: 'https://ae01.alicdn.com/kf/Ub8daf349fd6a451db5c88fb12a35a3722.jpg',
+country: 'GE',
+comments: '5 inside the package good deal for the family',
+stars: 5,
+product_id: 2
+)
+
+Review.create(
+name: 'R.W.W',
+avatar: 'https://s3-us-west-2.amazonaws.com/snap-sale/20180324200210/no-avatar.png',
+country: 'RU',
+comments: 'Good quality inside box however package was a little damage but they give me full refund',
+stars: 5,
+product_id: 2
+)
+
+# Product 3 (cutlery set)
+
+Review.create(
+name: 'Jo',
+avatar: 'https://ae01.alicdn.com/kf/U89a001e067894387aa0980647effbd5a3.jpg',
+country: 'US',
+comments: 'This set is AWESOME!!! I literally take it everywhere. The bamboo tastes very natural and I am considering switching all my cutlery to bamboo!',
+stars: 5,
+product_id: 3
+)
+
+Review.create(
+name: 'Lenn',
+avatar: 'https://ae01.alicdn.com/kf/U89fb230f6468465c864bde7df3b34f5aV.jpg',
+country: 'US',
+comments: 'This set is perfect we for our camping trips.  Easy to clean and does not get sticky like metal silverware',
+stars: 5,
+product_id: 3
+)
+
+Review.create(
+name: 'Kar',
+avatar: 'https://s3-us-west-2.amazonaws.com/snap-sale/20180324200210/no-avatar.png',
+country: 'MX',
+comments: 'just like described',
+stars: 4,
+product_id: 3
+)
+
+Review.create(
+name: 'Til',
+avatar: 'https://ae01.alicdn.com/kf/Ucf94ddc1c17d47a4beb9f9da97ebf02fi.jpg',
+country: 'CA',
+comments: 'The shipping was fast and tracking was accurate this is my favorite item we bought here highly recommend',
+stars: 5,
+product_id: 3
+)
+
+Review.create(
+name: 'pete',
+avatar: 'https://s3-us-west-2.amazonaws.com/snap-sale/20180324200210/no-avatar.png',
+country: 'CN',
+comments: 'good chopstick has good grip',
+stars: 5,
+product_id: 3
+)
+
+# Product 4 (coasters)
+
+Review.create(
+name: 'Str.',
+avatar: 'https://ae01.alicdn.com/kf/HTB1sdDbXXY7gK0jSZKzq6yikpXat.jpg',
+country: 'CA',
+comments: 'good beautiful quality the bamboo being raw smells a little funny but goes away',
+stars: 4,
+product_id: 4
+)
+
+Review.create(
+name: 'drew',
+avatar: 'https://ae01.alicdn.com/kf/Udb6712b810c84777b1d5b145fe4f3908O.jpg',
+country: 'US',
+comments: 'Good quality the package was a little damaged, but thats not really their fault but still 4 stars',
+stars: 4,
+product_id: 4
+)
+
+
+Review.create(
+name: 'alex',
+avatar: 'https://s3-us-west-2.amazonaws.com/snap-sale/20180324200210/no-avatar.png',
+country: 'US',
+comments: 'Beautiful',
+stars: 5,
+product_id: 4
+)
+
+
+Review.create(
+name: 'pete',
+avatar: 'https://s3-us-west-2.amazonaws.com/snap-sale/20180324200210/no-avatar.png',
+country: 'US',
+comments: '',
+stars: 5,
+product_id: 4
+)
+
+
+
+Review.create(
+name: 'Sally',
+avatar: 'https://s3-us-west-2.amazonaws.com/snap-sale/20180324200210/no-avatar.png',
+country: 'US',
+comments: 'the shape takes a little getting used too, but feels good to be using something biodegradable',
+stars: 5,
+product_id: 3
+)

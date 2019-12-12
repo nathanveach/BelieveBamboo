@@ -25,7 +25,7 @@
           http://www.fontspace.com/profile/AnimationistGirl         
           -->
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto mr-5">
             <li class="nav-item">
               <%= link_to 'About', about_path, class: 'nav-link' %>
             </li>
@@ -40,24 +40,18 @@
                 </div>
               </li>
             <li class="nav-item">
-              <%= link_to 'Contact Us', contact_path, class: 'nav-link' %>
+              <%= link_to 'Contact', contact_path, class: 'nav-link' %>
             </li>            
-            <li class="nav-item dropdown mr-5">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Other Pages
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                <a class="dropdown-item" href="full-width.html">Full Width Page</a>
-                <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
-                <a class="dropdown-item" href="faq.html">FAQ</a>
-                <a class="dropdown-item" href="404.html">404</a>
-                <a class="dropdown-item" href="pricing.html">Pricing Table</a>
-              </div>
-            </li>
+            <li class="nav-item">
+              <%= link_to 'Shipping', contact_path, class: 'nav-link' %>
+            </li>            
+            <li class="nav-item">
+              <%= link_to 'Refunds', contact_path, class: 'nav-link' %>
+            </li>                        
           </ul>
         </div>
         <div class="navbar-brand my-n2">
-          <button class="btn btn-lg btn-custom text-white ml-n4 mr-n5" data-toggle="modal" data-target="#modalCart">
+          <button class="btn btn-lg btn-custom text-white mx-n4" data-toggle="modal" data-target="#modalCart">
             <i class="fa fa-shopping-cart fa-lg"></i>
             (<%= current_cart.items_count %>)
           </button>

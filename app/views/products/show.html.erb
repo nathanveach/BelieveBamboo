@@ -76,7 +76,7 @@
 						<%= submit_tag 'Add to Cart', class: 'btn btn-custom btn-block text-white' %>
 					</div>
 				</div>
-        <small><p class="text-muted">*Stripe secure checkout all prices are in USD</p></small>
+        <small><p class="text-muted">Powered by Stripe secure checkout all prices are in USD</p></small>
         <div class="row mt-4 mb-n4 ml-3">
           <div class="col">
             <i class="fa fa-cc-stripe fa-lg"></i>
@@ -130,7 +130,7 @@
                   <div class="media-body">
                     <h6 class="d-inline mr-3"><%= p.name %></h5>
                     <% p.stars.times do %>
-                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star fa-sm"></i>
                     <% end %>
                     <p class="text-muted">Country: <%= p.country %></p>                    
                     <p><%= p.comments %></p>
@@ -138,7 +138,9 @@
                 </li><hr/>
                 <% end %>
               </ul>
-              <p class="text-right">Write a Review</p>
+              <button class="btn btn-link" data-toggle="modal" data-target="#modalReview">
+                Write a Review
+              </button>
             </div>
           <!-- Specs tab -->
             <div class="tab-pane fade" id="specs" role="tabpanel" aria-labelledby="specs-tab">
@@ -163,6 +165,26 @@
 
 
 
-
+<!-- Modal: modalReview -->
+<div class="modal fade" id="modalReview" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <h4 class="modal-title text-center" id="myModalLabel">Error:</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body">
+        <h1 class="mb-3">Oops! You must purchase the product before writing a review. Browse our products   
+        <a class="cart-link ml-2" href="/#products"><u>HERE</u></a></h1>          
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal: modalReview -->
 
 

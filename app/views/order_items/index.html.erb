@@ -1,7 +1,10 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 offset-md-2">
-			<div class="card cart-card my-4">
+			<div class="card bg-light cart-card my-4">
+				<div class="card-title">
+					<h1 class="bamboo-title text-center mb-n4">Your Bamboo Cart</h1>
+				</div><hr class="hr-custom"/>
 				<div class="card-body">
 					<ul class="list-unstyled">
 						<% @items.each do |i| %>
@@ -23,10 +26,31 @@
 								<div class="col">
 									<ul class="list-unstyled">
 										<li class="text-right">Sub Total: <%=number_to_currency current_cart.sub_total %></li>
+										<li class="text-muted text-right my-n1"><small>Free international shipping</small>
+										</li>
+										<li class="text-muted text-right"><small>Est. time: 1-4 weeks</small>
+										</li>
 									</ul>
 								</div>
 							</div>
 							<%= link_to 'Proceed to Checkout', customer_path, class: 'btn btn-custom btn-block text-white border mt-3' %>
+			        <div class="row mt-3 mb-n3 text-center">
+			          <div class="col">
+			            <i class="fa fa-cc-stripe fa-lg"></i>
+			          </div>
+			          <div class="col">
+			            <i class="fa fa-cc-visa fa-lg"></i>
+			          </div>
+			          <div class="col">
+			            <i class="fa fa-cc-mastercard fa-lg"></i>
+			          </div>
+			          <div class="col">
+			            <i class="fa fa-cc-discover fa-lg"></i>
+			          </div>
+			          <div class="col">
+			            <i class="fa fa-cc-amex fa-lg"></i>
+			          </div>
+			        </div>
 							<% else %>
 								<h1 class="my-5">Oops! Looks like your cart is empty... Browse our products   
 								<a class="cart-link ml-2" href="/#products"><u>HERE</u></a></h1>

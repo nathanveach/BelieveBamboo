@@ -1,11 +1,11 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-6">
-			<div class="card bg-light mt-5">
+		<div class="col-md-6 bgcustom mt-4 mb-1">
+			<div class="card bgcustom text-white my-5 border-white">
 				<div class="card-title text-center mt-3">
 					<h4>Order Summary</h4>	
 				</div>
-				<div class="card-body">
+				<div class="card-body"><hr class="border-white mt-n2"/>
 					<ul class="list-unstyled my-4">
 						<% @items.each do |i| %>
 							<li class="media my-4">
@@ -18,14 +18,13 @@
 								</div>
 							</li>
 						<% end %>
-					</ul><hr/>
+					</ul><hr class="border-white"/>
 					<p class="text-right mr-3"><strong>Sub Total:</strong> <%=number_to_currency current_cart.sub_total %></p>
-					<p class="text-muted text-right my-n3 mr-3">*All prices are in USD</p>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6">
-			<div class="card bg-light mt-5">
+		<div class="col-md-6 mt-4">
+			<div class="card bg-light my-5">
 				<div class="card-title text-center mt-3">
 					<h5>Shipping Information</h5>				
 				</div>
