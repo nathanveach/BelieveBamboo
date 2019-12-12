@@ -50,11 +50,12 @@
 
     <div class="row text-center">
       <% @products.each do |p| %>
-      <div class="col-4 product-item">
+      <div class="col product-item">
         <div class="card h-100 border-0">
           <%= image_tag p.image, class: 'card-img-top' %>
-          <div class="card-body">
+          <div class="card-body mt-n3">
             <h4 class="card-title text-center">
+              <small class="text-danger"><strike> <%= p.price2 %> </strike></small><br/>
               <%= link_to "$#{p.price.round}", p, class: 'text-decoration-none text-dark stretched-link' %>
             </h4>
             <p class="card-text text-center"><strong><%= p.title %></strong></p>
@@ -65,7 +66,9 @@
     </div>
     <!-- /.row -->
   </div>
+
   <!-- Features Section -->
+
   <div class="bgcustom">
     <div class="container">
       <div class="row">
@@ -96,10 +99,9 @@
       <div class="col-md-6">
         <h6 class="mt-2 mb-3">Subscribe to our mailing list and find out how you can get involved in the fight against single use plastics!</h6>
       </div>
-      <div class="col-md-6 mt-2">
+      <div class="col-md-6 mt-2 text-center">
         <form class="form-inline">
           <div class="form-group mx-sm-3 mb-2">
-            <label for="emailList" class="sr-only">Password</label>
             <input type="text" class="form-control" id="emailList" placeholder="Johndoe@example.com">
           </div>
           <button type="submit" class="btn btn-custom mb-2 text-white ml-2">Subscribe</button>

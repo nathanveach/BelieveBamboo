@@ -13,7 +13,13 @@
         	<%= image_tag @product.image2 %>
         </div>
         <div class="carousel-item">
-        	<%= image_tag @product.image3 %>
+          <%= image_tag @product.image3 %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag @product.image4 %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag @product.image5 %>
         </div>
       </div>
       <!--/.Slides-->
@@ -35,7 +41,13 @@
         	<%= image_tag @product.image2, class: 'd-block show-thumb' %>
 				</li>
         <li data-target="#carousel-thumb" data-slide-to="2" class="mx-3">
-        	<%= image_tag @product.image3, class: 'd-block show-thumb' %>
+          <%= image_tag @product.image3, class: 'd-block show-thumb' %>
+        </li>
+        <li data-target="#carousel-thumb" data-slide-to="3" class="mx-3">
+          <%= image_tag @product.image4, class: 'd-block show-thumb' %>
+        </li>
+        <li data-target="#carousel-thumb" data-slide-to="4" class="mx-3">
+          <%= image_tag @product.image5, class: 'd-block show-thumb' %>
         </li>
       </ol>
     </div>
@@ -47,7 +59,9 @@
 			<%= form_tag order_items_path do %>
 				<%= hidden_field_tag :product_id, @product.id %>
 				<div class="ml-3 my-4">
-					<strong><%= number_to_currency @product.price %></strong>
+					<strong><strike class="text-danger mr-1">
+            <%= @product.price2 %></strike>
+             $<%= @product.price.round %></strong>
             <i class="fa fa-star ml-5"></i>
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
@@ -62,6 +76,7 @@
 						<%= submit_tag 'Add to Cart', class: 'btn btn-custom btn-block text-white' %>
 					</div>
 				</div>
+        <small><p class="text-muted">*Stripe secure checkout all prices are in USD</p></small>
         <div class="row mt-4 mb-n4 ml-3">
           <div class="col">
             <i class="fa fa-cc-stripe fa-lg"></i>
@@ -113,7 +128,7 @@
                 <li class="media">
                   <%= image_tag p.avatar, class: 'review-avatar mr-3 align-self-center rounded' %><small>
                   <div class="media-body">
-                    <h5 class="d-inline mr-3"><%= p.name %></h5>
+                    <h6 class="d-inline mr-3"><%= p.name %></h5>
                     <% p.stars.times do %>
                       <i class="fa fa-star"></i>
                     <% end %>
@@ -136,7 +151,7 @@
                 <li><%= @product.spec3 %></li>
               </ul>
               <h6>Product SKU: </h6>
-              <p># <%= SecureRandom.hex(8) %></p></small>
+              <p class="mt-n2"># <%= SecureRandom.hex(8) %></p></small>
             </div>
           </div>
 				</div>

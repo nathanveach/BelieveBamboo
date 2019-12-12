@@ -9,47 +9,76 @@
 # Products 
 
 Product.create(
-	title: 'Bamboo Drinking Straws [10 pk]', 
-	price: 10, 
+	title: 'Bamboo Drinking Straws [10pc]', 
+	price: 15,
+	price2: '$20',
 	description: "The idea that started it all.  These eco-friendly bamboo straws are not only sustainable, bio-degradable,
- but also extremely durable. Perfect for events or every day use each one of these straws can last weeks.",
+ 	but also extremely durable. Perfect for events or every day use each one of these straws can last weeks.",
 	description2: "Also included is a versatile cleaning brush making cleaning an ease.  Ofcourse, you can also throw them in the dishwasher for easier 
-cleaning.  These straws are very resilient to moisture and heat some of our customers prefer boiling them in water to
-disinfect.  Join the bamboo movement today and make a difference in the fight against plastic!",
+	cleaning.  These straws are very resilient to moisture and heat some of our customers prefer boiling them in water to
+	disinfect.  Join the bamboo movement today and make a difference in the fight against plastic!",
 	spec1: '10x Bamboo Straws - 7.68in / 19.5 cm',
 	spec2: '1x Cleaning brush 7.87 in / 20 cm',
 	spec3: 'Packing box size - 8.66 in x 2.56 in x 0.98 in / 22 cm x 6.5 cm x 2.5 cm',
-	image: 'https://believebamboo.s3-us-west-1.amazonaws.com/bamboo-straws400x400.jpg', 
-	image2: 'https://believebamboo.s3-us-west-1.amazonaws.com/straws(2)400x400.jpg', 
-	image3: 'https://believebamboo.s3-us-west-1.amazonaws.com/straw(3)400x400.jpg'
+	image: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-STRAW-1-400X400.jpg', 
+	image2: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-STRAW-2-400X400.jpg', 
+	image3: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-STRAW-3-400X400.jpg',
+	image4: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-STRAW-4-400X400.jpg',
+	image5: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-STRAW-5-400X400.jpg'
 )
 
 
 
 Product.create(
-	title: 'Bamboo Toothbrushes [5 pk]', 
-	price: 10, 
+	title: 'Bamboo Toothbrushes [5pc]', 
+	price: 15, 
 	description: 'Say no more to plastic toothbrushes and prepare to take on the sustainable initiative with this 100% organic bamboo toothbrush. With 5 pieces included all individually wrapped these make perfect gifts for friends & family.', 
-	image: 'https://believebamboo.s3-us-west-1.amazonaws.com/toothbrush.jpg', 
-	image2: 'https://believebamboo.s3-us-west-1.amazonaws.com/toothbrush(2)400x400.jpg', 
-	image3: 'https://believebamboo.s3-us-west-1.amazonaws.com/toothbrush(3)400x400.jpg'
+	image: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-TOOTH-1-400X400.jpg', 
+	image2: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-TOOTH-2-400X400.jpg',
+	image3: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-TOOTH-3-400X400.jpg',
+	image4: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-TOOTH-4-400X400.jpg', 
+	image5: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-TOOTH-5-400X400.jpg',
+	spec1: '5x Bamboo Toothbrushes',
+	spec2: '19.5 cm x 3 cm x 1.5 cm',
+	spec3: 'Weight: 10g'
 )
 
 
 
 Product.create(
 	title: 'Bamboo Cutlery Set [Full]', 
-	price: 15, image: 'https://believebamboo.s3-us-west-1.amazonaws.com/cutlery.jpg', 
+	price: 20,
 	description: 'This all inclusive all bamboo cutlery set is perfect for all your travel needs. Wrapped up in a floral patterned fabric these utensils are sure to bring the life to any picnic!', 
-	image2: 'https://believebamboo.s3-us-west-1.amazonaws.com/cutlery(2)400x400.jpg', 
-	image3: 'https://believebamboo.s3-us-west-1.amazonaws.com/cutlery(3)400x400.jpg'
+	image: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-CUTLERY-1-400X400.jpg', 
+	image2: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-CUTLERY-2-400X400.jpg', 
+	image3: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-CUTLERY-3-400X400.jpg',
+	image4: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-CUTLERY-4-400X400.jpg',
+	image5: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-CUTLERY-5-400X400.jpg',
+	spec1: 'Fork, Knife, Spoon, Chopsticks, Straw, Cleaning brush',
+	spec2: '7.8 in / 20 cm',
+	spec3: 'Dishwasher safe / Handwash recommended'
+)
+
+Product.create(
+	title: 'Bamboo Coaster Set [6pc]', 
+	price: 20, 
+	description: "This 6 piece set is a perfect addition to any household.  Handcrafted from selected raw bamboo these lotus design coasters are not only elegant, but also 
+	durable.  Measuring just under 4 inches (10 cm) in diameter these coasters add a stylish addition to any kitchen/living room set.", 
+	image: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-COASTER-1-400X400.jpg', 
+	image2: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-COASTER-2-400X400.jpg', 
+	image3: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-COASTER-3-400X400.jpg', 
+	image4: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-COASTER-4-400X400.jpg', 
+	image5: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-COASTER-5-400X400.jpg',
+	spec1: '4 in x 4 in',
+	spec2: '10 cm x 10 cm',
+	spec3: 'non-slip x heat-resistant'
 )
 
 # Reviews
 # Product 1 (straws)
 
 Review.create(
-	name: 'Ashley M.',
+	name: 'Ash',
 	avatar: 'https://ae01.alicdn.com/kf/UTB8YNtDxv2JXKJkSanrq6y3lVXaW.jpg',
 	country: 'UK',
 	comments: 'These bad boys are my new go-to straw.  They are not all the same color but thats okay each one lasts for weeks.',
@@ -58,7 +87,7 @@ Review.create(
 	)
 
 Review.create(
-	name: 'Gary Lutz',
+	name: 'Gary',
 	avatar: 'https://anobium.files.wordpress.com/2013/05/dsc_0411.jpg?w=584',
 	comments: 'These straws are legit! 5 stars I have only used 1 for the last month just make sure to clean them with the brush before using them you can even throw them in the dishwasher!',
 	stars: 5,
@@ -94,7 +123,7 @@ Review.create(
 	)
 
 Review.create(
-	name: 'David W',
+	name: 'DaveW',
 	avatar: 'https://s3-us-west-2.amazonaws.com/snap-sale/20180324200210/no-avatar.png',
 	country: 'US',
 	comments: 'good product by a good company its game over for plastics',
