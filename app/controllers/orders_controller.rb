@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
 		id = @order.customer.id
 		if @order.update_attributes(order_params.merge(status: 'open', customer_id: id))
 			session[:cart_token] = nil
-			flash[:success] = "Your order was successful!"
+			flash[:success] = "Your order was successful! Check your Email shortly for receipt and shipping inforomation."
 			redirect_to root_path
 		end
 	end

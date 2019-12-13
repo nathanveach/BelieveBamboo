@@ -1,5 +1,5 @@
 <div class="alert alert-success text-center mt-3" style="position: fixed; width: 100%; z-index: 9999;">
-	Congratulations Free Shipping to <%= @order.customer.country_name %>
+	Free Shipping to <%= @order.customer.country_name %>!
 </div>
 <!-- Jquery timer <span id="time"></span> -->
 
@@ -46,7 +46,7 @@
 							<li><%= @order.customer.address %> <%= @order.customer.optional %></li>
 							<li><%= @order.customer.city %> <%= @order.customer.state %> <%= @order.customer.zip %></li></small>
 						</ul>
-						<u class="mx-3 mt-n4"><small><%= link_to "Not right?", customer_path %></small></u>
+						<u class="mx-3 mt-n4"><small><%= link_to "Not right?", customer_path %></u>
 						
 		        <div class="md-form mx-2 mb-5 mt-3">	
 		        	<div class="field form-group">
@@ -57,7 +57,7 @@
 		            <%= label_tag "Card Number" %>
 		            <div id="card-element" class="form-control"></div>
 		            <div id="card-errors" role="alert"></div>
-		          </div>
+		          </div></small>
 						<div class="row mt-4 mb-n4 text-center">
 							<div class="col">
 								<i class="fa fa-cc-stripe fa-lg"></i>

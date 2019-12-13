@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   post '/shipping', to: 'customers#create'
   resources :contacts, only: :create
   get 'contact-us', to: 'contacts#new', as: 'new_contact'
+  get 'order-received', to: 'pages#finished'
 end

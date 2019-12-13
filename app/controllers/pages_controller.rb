@@ -15,4 +15,10 @@ class PagesController < ApplicationController
 		@items = current_cart.order.items
 	end
 
+	def finished
+		@order = current_cart.order
+		@items = current_cart.order.items
+		redirect_to root_path
+	end
+
 end
