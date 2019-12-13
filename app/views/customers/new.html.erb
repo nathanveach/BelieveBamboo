@@ -1,10 +1,9 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 bgcustom mt-4 mb-1">
+					<h4 class="text-center text-white mt-2 mb-n2">Order Summary</h4>
 			<div class="card bgcustom text-white my-5 border-white">
-				<div class="card-title text-center mt-3">
-					<h4>Order Summary</h4>	
-				</div>
+				<div class="mt-3"></div>
 				<div class="card-body"><hr class="border-white mt-n2"/>
 					<ul class="list-unstyled my-4">
 						<% @items.each do |i| %>
@@ -24,8 +23,8 @@
 			</div>
 		</div>
 		<div class="col-md-6 mt-4">
-			<div class="card bg-light my-5">
-				<div class="card-title text-center mt-3">
+			<div class="card bg-light mt-2 mb-5">
+				<div class="card-title text-center">
 					<h5>Shipping Information</h5>				
 				</div>
 				<%= form_for @customer, url: customer_path do |f| %>

@@ -64,11 +64,11 @@ Product.create(
 	price: 20, 
 	description: "This 6 piece set is a perfect addition to any household.  Handcrafted from selected raw bamboo these lotus design coasters are not only elegant, but also 
 	durable.  Measuring just under 4 inches (10 cm) in diameter these coasters add a stylish addition to any kitchen/living room set.", 
-	image: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-COASTER-1-400X400.jpg', 
+	image: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-COASTER-5-400X400.jpg', 
 	image2: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-COASTER-2-400X400.jpg', 
 	image3: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-COASTER-3-400X400.jpg', 
 	image4: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-COASTER-4-400X400.jpg', 
-	image5: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-COASTER-5-400X400.jpg',
+	image5: 'https://believebamboo.s3-us-west-1.amazonaws.com/FIN-COASTER-1-400X400.jpg',
 	spec1: '4 in x 4 in',
 	spec2: '10 cm x 10 cm',
 	spec3: 'non-slip x heat-resistant'

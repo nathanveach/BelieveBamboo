@@ -1,11 +1,12 @@
 <div class="alert alert-success text-center mt-3" style="position: fixed; width: 100%; z-index: 9999;">
-	FREE SHIPPING ENDS <span id="time"></span>
+	Congratulations Free Shipping to <%= @order.customer.country_name %>
 </div>
+<!-- Jquery timer <span id="time"></span> -->
 
 <div class="container bgcustom mb-1">
 	<div class="row order-page">
 		<div class="col-md-6">
-			<div class="card bg-light mt-2">
+			<div class="card bg-light mt-5">
 				<div class="card-title text-center mt-3">
 					<%= form_for @order, url: checkout_path, html: { id: 'checkoutForm'} do |f| %>
 					<%= hidden_field_tag :customer_id, :value => params[:customer_id] %>
@@ -37,7 +38,7 @@
 			<div class="col-md-6">
 				<div class="card bg-light my-2">
 					<div class="card-title text-center mt-3">
-						<h5> Shipping Information </h5>
+						<h5> Payment Information </h5>
 					</div>
 					<div class="card-body mt-n2">
 						<ul class="list-unstyled mx-4 bg-white mb-1"><small>

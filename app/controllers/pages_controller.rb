@@ -5,7 +5,12 @@ class PagesController < ApplicationController
 		@items = current_cart.order.items		
 	end
 
-	def contact
+	def tracking
+		@order = current_cart.order
+		@items = current_cart.order.items
+	end
+
+	def refunds
 		@order = current_cart.order
 		@items = current_cart.order.items
 	end

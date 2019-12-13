@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get '/cart/checkout', to: 'orders#new', as: :checkout
   patch '/cart/checkout', to: 'orders#create'
   get '/about', to: 'pages#about'
-  get '/contact', to: 'pages#contact'
+  get '/shipping-info', to: 'pages#tracking'
+  get '/refunds', to: 'pages#refunds'
   get '/shipping', to: 'customers#new', as: :customer
-  post 'shipping', to: 'customers#create'
+  post '/shipping', to: 'customers#create'
+  resources :contacts, only: :create
+  get 'contact-us', to: 'contacts#new', as: 'new_contact'
 end
