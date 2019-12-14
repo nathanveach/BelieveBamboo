@@ -88,7 +88,7 @@ Review.create(
 
 Review.create(
 	name: 'Gary',
-	avatar: 'https://anobium.files.wordpress.com/2013/05/dsc_0411.jpg?w=584',
+	avatar: 'https://ae01.alicdn.com/kf/UTB8fRXew22JXKJkSanrq6y3lVXaQ.jpg',
 	comments: 'These straws are legit! 5 stars I have only used 1 for the last month just make sure to clean them with the brush before using them you can even throw them in the dishwasher!',
 	stars: 5,
 	country: 'US',
