@@ -48,7 +48,7 @@
 						</ul>
 						<u class="mx-3 mt-n4"><small><%= link_to "Not right?", customer_path %></u>
 						
-		        <div class="md-form mx-2 mb-5 mt-3">	
+		        <div class="md-form mx-2 mb-4 mt-3">	
 		        	<div class="field form-group">
 		        		<%= label_tag "Name on Card" %>
 								<%= f.text_field :cardname, class: 'form-control', placeholder: 'First & Last Name', required: true, autofocus: true %>
@@ -58,27 +58,24 @@
 		            <div id="card-element" class="form-control"></div>
 		            <div id="card-errors" role="alert"></div>
 		          </div></small>
-						<div class="row mt-4 mb-n4 text-center">
-							<div class="col">
-								<i class="fa fa-cc-stripe fa-lg"></i>
-							</div>
-							<div class="col">
-								<i class="fa fa-cc-visa fa-lg"></i>
-							</div>
-							<div class="col">
-								<i class="fa fa-cc-mastercard fa-lg"></i>
-							</div>
-							<div class="col">
-								<i class="fa fa-cc-discover fa-lg"></i>
-							</div>
-							<div class="col">
-								<i class="fa fa-cc-amex fa-lg"></i>
-							</div>
-						</div>
 		      </div>
 		      <div class="mx-3 mb-3">
 		 				<%= f.submit "Pay #{number_to_currency current_cart.sub_total}", class: 'btn btn-block text-center btn-custom text-white', id: 'submitBtn', :data => {disable_with: false} %>
 	 				</div>
+	 				<div class="row text-center mt-4">
+	 					<div class="col">
+	 						<%= image_tag 'https://believebamboo.s3-us-west-1.amazonaws.com/badge1.png', class: 'w-75' %>
+ 						</div>
+	 					<div class="col">
+		 					<%= image_tag 'https://believebamboo.s3-us-west-1.amazonaws.com/badge2.png', class: 'w-75' %>
+		 				</div>
+		 				<div class="col">
+		 					<%= image_tag 'https://believebamboo.s3-us-west-1.amazonaws.com/badge3.png', class: 'w-75 mt-n2' %>
+		 				</div>
+ 						<div class="col">
+		 					<%= image_tag 'https://believebamboo.s3-us-west-1.amazonaws.com/badge5.png', class: 'w-100' %>
+		 				</div>
+		 			</div>
 	 			</div>
 	 		</div>
     </div>

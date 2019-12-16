@@ -54,3 +54,7 @@
 	        display = document.querySelector('#time');
 	    startTimer(sevenMinutes, display);
 	};
+
+$(document).on('turbolinks:load', function(){
+  $('.alert').delay(1000).fadeOut(4000);
+});
