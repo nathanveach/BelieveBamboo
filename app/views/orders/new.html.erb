@@ -8,8 +8,6 @@
 		<div class="col-md-6">
 			<div class="card bg-light mt-5">
 				<div class="card-title text-center mt-3">
-					<%= form_for @order, url: checkout_path, html: { id: 'checkoutForm'} do |f| %>
-					<%= hidden_field_tag :customer_id, :value => params[:customer_id] %>
 					<h5 class="text-center mb-3"> Order Summary</h5>
 				</div>
 	      	<% @items.each do |i| %>
@@ -48,7 +46,9 @@
 						</ul>
 						<u class="mx-3 mt-n4"><small><%= link_to "Not right?", customer_path %></u>
 						
-		        <div class="md-form mx-2 mb-4 mt-3">	
+					<%= form_for @order, url: checkout_path, html: { id: 'checkoutForm'} do |f| %>
+					<%= hidden_field_tag :customer_id, :value => params[:customer_id] %>
+		        <div class="mx-2 mb-4 mt-3">	
 		        	<div class="field form-group">
 		        		<%= label_tag "Name on Card" %>
 								<%= f.text_field :cardname, class: 'form-control', placeholder: 'First & Last Name', required: true, autofocus: true %>
@@ -61,7 +61,8 @@
 		      </div>
 		      <div class="mx-3 mb-3">
 		 				<%= f.submit "Pay #{number_to_currency current_cart.sub_total}", class: 'btn btn-block text-center btn-custom text-white', id: 'submitBtn', :data => {disable_with: false} %>
-	 				</div>
+	 				</div>	 				
+					<% end %>
 	 				<div class="row text-center mt-4">
 	 					<div class="col">
 	 						<%= image_tag 'https://believebamboo.s3-us-west-1.amazonaws.com/badge1.png', class: 'w-75' %>
@@ -81,5 +82,4 @@
     </div>
   </div>
 </div>
-<% end %>
 
