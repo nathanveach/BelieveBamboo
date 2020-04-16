@@ -127,21 +127,24 @@
               <ul id="reviewz">
               <% @product.reviews.each do |p| %>
                 <li class="media">
-                  <%= image_tag p.avatar, class: 'review-avatar mr-3 align-self-center rounded' %><small>
+                  <% if p.avatar.nil? %>
+                    <%= image_tag 'https://s3-us-west-2.amazonaws.com/snap-sale/20180324200210/no-avatar.png', class: 'review-avatar mr-3 align-self-center rounded' %>
+                  <% else %>
+                    <%= image_tag p.avatar, class: 'review-avatar mr-3 align-self-center rounded' %>
+                  <% end %>
+                  <small>
                   <div class="media-body">
-                    <h6 class="d-inline mr-3"><%= p.name %></h5>
-                    <% p.stars.times do %>
-                      <i class="fa fa-star fa-sm"></i>
-                    <% end %>
+                    <h6 class="d-inline mr-3"><%= p.name %></h6>                    
+                      <% p.stars.times do %>
+                        <i class="fa fa-star fa-sm"></i>
+                      <% end %>
                     <p class="text-muted">Country: <%= p.country %></p>                    
                     <p><%= p.comments %></p>
                   </div></small>
                 </li><hr/>
                 <% end %>
               </ul>
-              <button class="btn btn-link" data-toggle="modal" data-target="#modalReview">
-                Write a Review
-              </button>
+              <%= link_to "Write a Review", new_product_review_path(@product), class: 'btn btn-link' %>
             </div>
           <!-- Specs tab -->
             <div class="tab-pane fade" id="specs" role="tabpanel" aria-labelledby="specs-tab">
