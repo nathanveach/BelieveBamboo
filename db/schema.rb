@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_13_202614) do
+ActiveRecord::Schema.define(version: 2020_04_17_210921) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "name", null: false
@@ -75,13 +75,13 @@ ActiveRecord::Schema.define(version: 2019_12_13_202614) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "name"
-    t.string "avatar"
     t.integer "stars"
     t.string "country"
     t.text "comments"
     t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
 end
