@@ -62,12 +62,11 @@
 				<div class="ml-3 my-4">
 					<strong><strike class="text-danger mr-1">
             <%= @product.price2 %></strike>
-             $<%= @product.price.round %></strong>
-            <i class="fa fa-star ml-5"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i> ( <%= @product.reviews.count %> )
+            $<%= @product.price.round %></strong>
+            <div class="row">
+              <div class="star-rating" data-score= <%= @avg_rating %> ></div>            
+               <strong class="color-custom ml-2"> ( <%= @product.reviews.count %> )</strong>
+            </div>
 				</div><hr/>
 				<div class="row mt-5">
 					<div class="col-md-3">
@@ -131,9 +130,7 @@
                   <small>
                     <div class="media-body">
                       <h6 class="d-inline mr-3"><%= p.name %></h6>                    
-                        <% p.stars.times do %>
-                          <i class="fa fa-star fa-sm"></i>
-                        <% end %>
+                      <div class="star-rating" data-score= <%= p.stars %> ></div>
                       <p class="text-muted">Country: <%= p.country %></p>                    
                       <p><%= p.comments %></p>
                     </div>
@@ -167,3 +164,12 @@
 
 
 
+<script>
+  $('.star-rating').raty({
+    path: 'https://natesyelpdemo.s3-us-west-1.amazonaws.com/stars/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>
