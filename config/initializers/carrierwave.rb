@@ -5,4 +5,5 @@ CarrierWave.configure do |config|
     aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key],   # required unless using use_iam_profile
     region: 'us-west-1'
   }
-  config.fog_directory  = 'believebamboo'
+  config.fog_directory  = 'believebamboo'                                      # required
+end
