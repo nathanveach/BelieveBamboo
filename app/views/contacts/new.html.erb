@@ -1,11 +1,11 @@
 <div class="container mt-4">
-	<h1 class="bamboo-title">Contact Us</h1>
+	<h1 class="bamboo-title text-center">Contact Us</h1>
 	<h6 class="mt-n1 text-center mb-3">Questions? Suggestions? We'd like to hear from you!</h6>
 	<div class="row">
 		<div class="col-md-4 offset-md-4">
 			<div class="card bgcustom text-white mb-5">
 				<div class="card-body">
-	        <%= form_for @contact do |f| %>
+	        <%= form_for @contact, url: contact_us_path do |f| %>
 	        
 	          <div class="form-group">
 	            <%= f.label :name %>
