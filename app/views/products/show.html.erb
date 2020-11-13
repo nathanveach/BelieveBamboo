@@ -126,7 +126,11 @@
               <ul id="reviewz">
               <% @product.reviews.each do |p| %>
                 <li class="media">
-                  <%= image_tag p.image_url, class: 'review-avatar mr-3 align-self-center rounded' %>
+                  <% if p.avatar.blank? %>
+                    <%= image_tag p.image_url, class: 'review-avatar mr-3 align-self-center rounded' %>
+                  <% else %>
+                    <%= image_tag p.avatar, class: 'review-avatar mr-3 align-self-center rounded' %>
+                  <% end %>
                   <small>
                     <div class="media-body">
                       <h6 class="d-inline mr-3"><%= p.name %></h6>                    

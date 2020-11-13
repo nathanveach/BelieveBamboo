@@ -78,10 +78,11 @@ ActiveRecord::Schema.define(version: 2020_04_17_210921) do
     t.integer "stars"
     t.string "country"
     t.text "comments"
-    t.bigint "product_id"
+    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.string "avatar"
   end
 
 end
