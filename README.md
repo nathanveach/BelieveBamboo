@@ -1,6 +1,6 @@
 # Believe Bamboo 🛒
 
-https://believebamboo.herokuapp.com/
+## https://believebamboo.herokuapp.com/
 
 Rails 5 fully functional eCommerce Shopping Cart built from scratch.
 
