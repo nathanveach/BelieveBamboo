@@ -32,3 +32,7 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# ssh keys
+keys
+keys.pub
